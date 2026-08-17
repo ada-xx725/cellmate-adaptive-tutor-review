@@ -1,0 +1,17 @@
+{
+  "annotationProtocolVersion": "annotation-protocol-v1",
+  "annotationGuideVersion": "annotation-guide-v1",
+  "stateAuthoringProtocolVersion": "formal-state-authoring-v1",
+  "basedOnPilotGuide": "pilot-guide-v3",
+  "freezeTag": "annotation-protocol-v1",
+  "hashCanonicalization": "UTF-8 text with CRLF normalized to LF",
+  "files": {
+    "FORMAL_ANNOTATION_GUIDE_V1.md": "576B101C04A2AF0EB54AD4B9DB70A17ABF15339027E7D08D3A3B179C12570584",
+    "FORMAL_STATE_AUTHORING_PROTOCOL_V1.md": "08262022A05C1A9E1C5059D1FAA92799D05CE5FD6C2B3CD5AE77F2EFB728A61B",
+    "FORMAL_STATE_SCHEMA_V1.json": "533F065F252E6F50E4F62154F55387F9C7DEF1732DC6173D75B9C8C82C002F9E",
+    "FORMAL_RATER_FORM_TEMPLATE_V1.md": "D73D0C1B73CA88BE758DA201001368BC441F1C3710A51BA9427555B87D51F525"
+  },
+  "frozenAt": "2026-07-15",
+  "heldoutConstructed": false,
+  "policyOutputsObserved": false
+}

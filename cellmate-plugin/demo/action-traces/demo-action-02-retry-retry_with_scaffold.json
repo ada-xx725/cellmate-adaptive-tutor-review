@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "stateId": "demo-action-02-retry",
+  "participantId": "demo-learner",
+  "policy": "full_adaptive",
+  "policyVersion": "full-adaptive-v1",
+  "taskSpec": {
+    "id": "demo-count-positive",
+    "sourceMode": "course_verified",
+    "taskSummary": "Count positive numbers in a list",
+    "expectedBehavior": "Return the number of values greater than zero",
+    "title": "Count positive numbers",
+    "promptMarkdown": "Use a loop, a condition, and a counter.",
+    "targetConcepts": [
+      "functions",
+      "for_loops",
+      "conditionals",
+      "accumulators"
+    ],
+    "primaryConcept": "accumulators",
+    "difficulty": 3,
+    "confidence": 1
+  },
+  "evidence": {
+    "status": "failed",
+    "summary": "Pytest: count_positive([-1, 2, 3]) returned 0 instead of 2",
+    "source": "pytest",
+    "confidence": "high",
+    "hasReliableCheck": true
+  },
+  "learnerBefore": {
+    "studentId": "demo-learner",
+    "mastery": {
+      "functions": 50,
+      "for_loops": 50,
+      "conditionals": 50,
+      "accumulators": 50
+    }
+  },
+  "history": [],
+  "status": "action",
+  "action": "RETRY_WITH_SCAFFOLD",
+  "reasonCodes": [
+    "FIRST_RELIABLE_FAILURE"
+  ],
+  "evidenceUsed": [
+    "status:failed",
+    "source:pytest",
+    "confidence:high",
+    "reliable:true"
+  ],
+  "learnerAfter": {
+    "studentId": "demo-learner",
+    "mastery": {
+      "functions": 44,
+      "for_loops": 44,
+      "conditionals": 44,
+      "accumulators": 44
+    }
+  },
+  "latencyMs": 0.0556,
+  "modelVersion": "not-used-rule-coverage",
+  "promptVersion": "not-used-rule-coverage",
+  "policyUsesLlm": false,
+  "createdAt": "2026-07-26T19:58:06.104Z",
+  "caseTitle": "First broader failure",
+  "caseDescription": "The learner failed a multi-step task for the first time and needs an explicit structure for another attempt.",
+  "studentCode": "def count_positive(values):\n    return 0",
+  "expectedAction": "RETRY_WITH_SCAFFOLD",
+  "decisionSource": "full_adaptive_policy",
+  "matchedExpectedAction": true,
+  "traceNote": "Production DecisionEngine trace using FullAdaptivePolicy on a frozen demo input."
+}

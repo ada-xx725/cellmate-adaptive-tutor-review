@@ -1,0 +1,9 @@
+node_modules/
+out/
+out-evaluation/
+.DS_Store
+.vscode/
+.env
+test.ipynb
+demo/captures/
+demo/DEMO_PACK_TASK_PLAN.md

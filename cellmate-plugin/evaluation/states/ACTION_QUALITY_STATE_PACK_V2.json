@@ -1,0 +1,244 @@
+{
+  "statePackVersion": "action-quality-states-v2",
+  "protocolVersion": "action-quality-protocol-v2",
+  "annotationGuideVersion": "annotation-guide-v1",
+  "schemaVersion": 1,
+  "file": "action-quality-v2.jsonl",
+  "stateCount": 60,
+  "sha256": "A00F5F005903C18861A37FD92865B1DF589D8D1699232E6748A1370F8D230F96",
+  "hashCanonicalization": "UTF-8 text with CRLF normalized to LF",
+  "strata": {
+    "first_failure": 10,
+    "repeated_failure": 12,
+    "developing_pass": 10,
+    "established_pass": 10,
+    "needs_evidence": 8,
+    "narrow_pass": 10
+  },
+  "sources": {
+    "course_verified": 40,
+    "generated_attempt": 10,
+    "generic_llm": 10
+  },
+  "counterfactualPairCount": 30,
+  "invarianceGroupCount": 22,
+  "invarianceGroups": [
+    {
+      "groupId": "inv-v2-course-failure-01-member-1",
+      "stateIds": [
+        "heldout-v2-001",
+        "heldout-v2-003"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-failure-01-member-2",
+      "stateIds": [
+        "heldout-v2-002",
+        "heldout-v2-004"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-failure-02-member-1",
+      "stateIds": [
+        "heldout-v2-005",
+        "heldout-v2-007"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-failure-02-member-2",
+      "stateIds": [
+        "heldout-v2-006",
+        "heldout-v2-008"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-failure-03-member-1",
+      "stateIds": [
+        "heldout-v2-009",
+        "heldout-v2-011"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-failure-03-member-2",
+      "stateIds": [
+        "heldout-v2-010",
+        "heldout-v2-012"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-failure-04-member-1",
+      "stateIds": [
+        "heldout-v2-013",
+        "heldout-v2-015"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-failure-04-member-2",
+      "stateIds": [
+        "heldout-v2-014",
+        "heldout-v2-016"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-generated-failure-01-member-1",
+      "stateIds": [
+        "heldout-v2-017",
+        "heldout-v2-019"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-generated-failure-01-member-2",
+      "stateIds": [
+        "heldout-v2-018",
+        "heldout-v2-020"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-pass-01-member-1",
+      "stateIds": [
+        "heldout-v2-023",
+        "heldout-v2-025"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-pass-01-member-2",
+      "stateIds": [
+        "heldout-v2-024",
+        "heldout-v2-026"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-pass-02-member-1",
+      "stateIds": [
+        "heldout-v2-027",
+        "heldout-v2-029"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-pass-02-member-2",
+      "stateIds": [
+        "heldout-v2-028",
+        "heldout-v2-030"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-pass-03-member-1",
+      "stateIds": [
+        "heldout-v2-031",
+        "heldout-v2-033"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-pass-03-member-2",
+      "stateIds": [
+        "heldout-v2-032",
+        "heldout-v2-034"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-generic-pass-01-member-1",
+      "stateIds": [
+        "heldout-v2-037",
+        "heldout-v2-039"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-generic-pass-01-member-2",
+      "stateIds": [
+        "heldout-v2-038",
+        "heldout-v2-040"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-needs-01-member-1",
+      "stateIds": [
+        "heldout-v2-043",
+        "heldout-v2-045"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-needs-01-member-2",
+      "stateIds": [
+        "heldout-v2-044",
+        "heldout-v2-046"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-narrow-01-member-1",
+      "stateIds": [
+        "heldout-v2-051",
+        "heldout-v2-053"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-v2-course-narrow-01-member-2",
+      "stateIds": [
+        "heldout-v2-052",
+        "heldout-v2-054"
+      ],
+      "relation": "meaning_preserving_rewording"
+    }
+  ],
+  "courseCommit": "4317489856e3ece9d61e78638416c2e5451bf8bb",
+  "courseExercises": [
+    "exercise-1_11",
+    "exercise-1_15",
+    "exercise-1_6",
+    "exercise-2_4",
+    "exercise-2_7",
+    "exercise-3_5",
+    "exercise-3_7",
+    "exercise-4_2",
+    "exercise-4_6",
+    "exercise-5_1"
+  ],
+  "courseLectures": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "evaluationSetExercises": [
+    "exercise-1_11",
+    "exercise-1_15",
+    "exercise-1_6",
+    "exercise-2_4",
+    "exercise-2_7",
+    "exercise-3_5",
+    "exercise-3_7",
+    "exercise-4_2",
+    "exercise-4_6",
+    "exercise-5_1"
+  ],
+  "generator": "evaluation/annotation/buildActionQualityStatePackV2.js",
+  "generatorSha256": "5B5FF90FC832EEE626AA7C4EB669CAAEBC2E68A3344661F71726F8A860BD669E",
+  "constructedData": true,
+  "policyOutputsObserved": false,
+  "referenceLabelsPresent": false,
+  "formalResultsPresent": false,
+  "createdAt": "2026-08-17",
+  "supersedesStatePackVersion": "action-quality-states-v1",
+  "replacementReason": "The v1 accumulator-overwritten cluster was exposed during connectivity preflight before formal execution."
+}

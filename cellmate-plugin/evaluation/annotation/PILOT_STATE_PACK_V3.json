@@ -1,0 +1,16 @@
+{
+  "statePackVersion": "pilot-state-pack-v3",
+  "guideVersion": "pilot-guide-v3",
+  "file": "pilot_states_v3.jsonl",
+  "stateCount": 6,
+  "sha256": "5DAC2FB1A5C7E2D087AEC15030D933866A05FBA97F5A563D8F9184B96E36DED0",
+  "hashCanonicalization": "UTF-8 text with CRLF normalized to LF",
+  "pilotOnly": true,
+  "formalHeldoutEligible": false,
+  "createdAt": "2026-07-15",
+  "focus": [
+    "hint-scaffold-easier escalation",
+    "suboptimal-forbidden critical-error boundary",
+    "broad versus narrow passing evidence"
+  ]
+}

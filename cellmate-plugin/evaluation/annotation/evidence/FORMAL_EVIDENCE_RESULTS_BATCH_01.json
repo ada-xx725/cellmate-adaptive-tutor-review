@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "batch_version": "formal-heldout-v1-draft-b01-evidence",
+  "state_pack_sha256": "087B16EA3736A6A4E10EF6F12FED37E2B049E0A268FF0EB09B06E23F3D91D4F3",
+  "fixture_count": 6,
+  "state_count": 12,
+  "all_expected_results_reproduced": true,
+  "policy_outputs_observed": false,
+  "reference_labels_present": false,
+  "results": [
+    {
+      "fixture_id": "evidence-cf-001-my-sum",
+      "state_ids": [
+        "heldout-001",
+        "heldout-002"
+      ],
+      "status": "failed",
+      "passed_checks": 3,
+      "total_checks": 5,
+      "failed_test_ids": [
+        "mixed-sign-floats",
+        "long-range"
+      ],
+      "error_signature": "accumulator_overwritten",
+      "error_signature_verified": true,
+      "tests": [
+        {
+          "id": "callable",
+          "category": "callable",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "numeric-result",
+          "category": "numeric result",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "mixed-sign-floats",
+          "category": "mixed-sign floats",
+          "passed": false,
+          "error_type": "AssertionError",
+          "error_message": ""
+        },
+        {
+          "id": "empty-input",
+          "category": "empty input",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "long-range",
+          "category": "long range",
+          "passed": false,
+          "error_type": "AssertionError",
+          "error_message": ""
+        }
+      ],
+      "diagnostics": [
+        {
+          "id": "last-element-overwrite",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        }
+      ],
+      "matches_expected": true,
+      "mismatches": []
+    },
+    {
+      "fixture_id": "evidence-cf-002-count-positive",
+      "state_ids": [
+        "heldout-003",
+        "heldout-004"
+      ],
+      "status": "failed",
+      "passed_checks": 4,
+      "total_checks": 7,
+      "failed_test_ids": [
+        "negative-only",
+        "mixed-signs",
+        "single-negative"
+      ],
+      "error_signature": "truthiness_used_instead_of_positive_comparison",
+      "error_signature_verified": true,
+      "tests": [
+        {
+          "id": "positive-only",
+          "category": "positive values",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "negative-only",
+          "category": "negative values",
+          "passed": false,
+          "error_type": "AssertionError",
+          "error_message": ""
+        },
+        {
+          "id": "mixed-signs",
+          "category": "mixed signs",
+          "passed": false,
+          "error_type": "AssertionError",
+          "error_message": ""
+        },
+        {
+          "id": "zero",
+          "category": "zero",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "empty",
+          "category": "empty list",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "single-positive",
+          "category": "positive values",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "single-negative",
+          "category": "negative values",
+          "passed": false,
+          "error_type": "AssertionError",
+          "error_message": ""
+        }
+      ],
+      "diagnostics": [
+        {
+          "id": "negative-truthiness",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        }
+      ],
+      "matches_expected": true,
+      "mismatches": []
+    },
+    {
+      "fixture_id": "evidence-cf-003-factorial",
+      "state_ids": [
+        "heldout-005",
+        "heldout-006"
+      ],
+      "status": "passed",
+      "passed_checks": 6,
+      "total_checks": 6,
+      "failed_test_ids": [],
+      "error_signature": null,
+      "error_signature_verified": null,
+      "tests": [
+        {
+          "id": "zero",
+          "category": "zero",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "one",
+          "category": "one",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "two",
+          "category": "small positive integer",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "five",
+          "category": "small positive integer",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "numeric-result",
+          "category": "numeric result",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "callable",
+          "category": "callable",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        }
+      ],
+      "diagnostics": [],
+      "matches_expected": true,
+      "mismatches": []
+    },
+    {
+      "fixture_id": "evidence-cf-004-parse-scores",
+      "state_ids": [
+        "heldout-007",
+        "heldout-008"
+      ],
+      "status": "passed",
+      "passed_checks": 7,
+      "total_checks": 7,
+      "failed_test_ids": [],
+      "error_signature": null,
+      "error_signature_verified": null,
+      "tests": [
+        {
+          "id": "single",
+          "category": "single value",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "multiple",
+          "category": "multiple values",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "whitespace",
+          "category": "whitespace",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "negative",
+          "category": "negative values",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "empty-fields",
+          "category": "empty fields",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "empty-string",
+          "category": "empty string",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        },
+        {
+          "id": "only-empty-fields",
+          "category": "empty fields",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        }
+      ],
+      "diagnostics": [],
+      "matches_expected": true,
+      "mismatches": []
+    },
+    {
+      "fixture_id": "evidence-cf-005-unavailable-pybryt",
+      "state_ids": [
+        "heldout-009",
+        "heldout-010"
+      ],
+      "status": "unavailable",
+      "passed_checks": 0,
+      "total_checks": 0,
+      "failed_test_ids": [],
+      "error_signature": null,
+      "error_signature_verified": null,
+      "raw_output_excerpt": "warning: stale cache",
+      "tests": [],
+      "matches_expected": true,
+      "mismatches": []
+    },
+    {
+      "fixture_id": "evidence-cf-006-reverse-dict-narrow",
+      "state_ids": [
+        "heldout-011",
+        "heldout-012"
+      ],
+      "status": "passed",
+      "passed_checks": 1,
+      "total_checks": 1,
+      "failed_test_ids": [],
+      "error_signature": null,
+      "error_signature_verified": null,
+      "tests": [
+        {
+          "id": "course-visible-katze-key",
+          "category": "one course dictionary example",
+          "passed": true,
+          "error_type": null,
+          "error_message": null
+        }
+      ],
+      "diagnostics": [],
+      "matches_expected": true,
+      "mismatches": []
+    }
+  ]
+}

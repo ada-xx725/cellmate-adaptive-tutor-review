@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "suiteVersion": "evaluation-policy-suite-v3",
+  "runId": "aq-v2-primary-001",
+  "seed": "20260816",
+  "statePackVersion": "action-quality-states-v2",
+  "statePackSha256": "A00F5F005903C18861A37FD92865B1DF589D8D1699232E6748A1370F8D230F96",
+  "protocolVersion": "action-quality-protocol-v2",
+  "selectorPromptVersion": "llm-next-step-v6",
+  "selectorModelVersion": "gpt-4o-mini-2024-07-18",
+  "selectorConfigurationFingerprint": "F4E8635F79B46B78B1EBFA18583C75A59693B1E61E7C0B955C36EF0015792C49",
+  "sourceCommit": "d00dd256a096100297ffbddbdbbb5d9923009deb",
+  "sourceDirty": false,
+  "sourceStatusSha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "recordCount": 240,
+  "completedCount": 240,
+  "errorCount": 0,
+  "recordsSha256": "688A4B07E0777E16F3994914A2F817033EBD78F280761FF5416166C0D1B94809",
+  "apiKeyRecorded": false,
+  "rawProviderResponsesRecorded": false,
+  "createdAt": "2026-08-17T10:51:05.269Z"
+}

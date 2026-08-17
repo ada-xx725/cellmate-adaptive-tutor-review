@@ -1,0 +1,15 @@
+{
+  "description": "First-round expert-annotated evaluation set. Each exercise is tested with correct, typical-error, and stuck submissions.",
+  "exercises": [
+    { "id": "exercise-1_6", "concepts": ["expressions", "debugging"], "typicalError": "operator_or_formula_error" },
+    { "id": "exercise-1_11", "concepts": ["functions", "loops"], "typicalError": "loop_termination_error" },
+    { "id": "exercise-1_15", "concepts": ["functions", "loops", "accumulators"], "typicalError": "accumulator_update_error" },
+    { "id": "exercise-2_4", "concepts": ["functions", "loops", "recurrence"], "typicalError": "base_case_error" },
+    { "id": "exercise-2_7", "concepts": ["loops", "lists", "conditionals"], "typicalError": "filtering_error" },
+    { "id": "exercise-3_5", "concepts": ["functions", "exceptions"], "typicalError": "exception_handling_error" },
+    { "id": "exercise-3_7", "concepts": ["files", "lists"], "typicalError": "file_parsing_error" },
+    { "id": "exercise-4_2", "concepts": ["dictionaries", "comprehensions"], "typicalError": "key_value_reversal_error" },
+    { "id": "exercise-4_6", "concepts": ["classes", "methods"], "typicalError": "state_mutation_error" },
+    { "id": "exercise-5_1", "concepts": ["classes", "special_methods", "operator_overloading"], "typicalError": "special_method_or_operator_error" }
+  ]
+}

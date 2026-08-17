@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "courseCommit": "4317489856e3ece9d61e78638416c2e5451bf8bb",
+  "exercises": {
+    "exercise-1_2": {
+      "primary_concept": "arithmetic_operations",
+      "concepts": ["variables", "arithmetic_operations", "unit_conversion", "sequential_assignment"],
+      "difficulty": 1,
+      "next_exercises": ["exercise-1_3", "exercise-1_4"],
+      "next_concepts": ["compound_expressions", "functions"]
+    },
+    "exercise-1_3": {
+      "primary_concept": "arithmetic_operations",
+      "concepts": ["variables", "arithmetic_operations", "compound_expressions", "sequential_assignment"],
+      "difficulty": 2,
+      "next_exercises": ["exercise-1_4", "exercise-1_5"],
+      "next_concepts": ["functions"]
+    },
+    "exercise-1_4": {
+      "primary_concept": "arithmetic_operations",
+      "concepts": ["variables", "arithmetic_operations", "exponentiation", "sequential_assignment"],
+      "difficulty": 2,
+      "next_exercises": ["exercise-1_5", "exercise-1_7"],
+      "next_concepts": ["functions"]
+    },
+    "exercise-1_5": {
+      "primary_concept": "functions",
+      "concepts": ["functions", "parameters", "arithmetic_operations", "return_values"],
+      "difficulty": 2,
+      "next_exercises": ["exercise-1_7", "exercise-1_15"],
+      "next_concepts": ["for_loops", "lists"]
+    },
+    "exercise-1_6": {
+      "primary_concept": "arithmetic_operations",
+      "concepts": ["arithmetic_operations", "expressions", "debugging"],
+      "difficulty": 2,
+      "next_exercises": ["exercise-1_7", "exercise-1_8"],
+      "next_concepts": ["functions"]
+    },
+    "exercise-1_7": {
+      "primary_concept": "functions",
+      "concepts": ["functions", "parameters", "return_values", "arithmetic_operations"],
+      "difficulty": 2,
+      "next_exercises": ["exercise-1_15"],
+      "next_concepts": ["for_loops", "accumulators"]
+    },
+    "exercise-1_11": {
+      "primary_concept": "for_loops",
+      "concepts": ["functions", "for_loops", "accumulators", "integer_division"],
+      "difficulty": 2,
+      "next_exercises": ["exercise-1_12", "exercise-1_13"],
+      "next_concepts": ["lists"]
+    },
+    "exercise-1_13": {
+      "primary_concept": "lists",
+      "concepts": ["lists", "variables", "ranges"],
+      "difficulty": 2,
+      "next_exercises": ["exercise-1_14", "exercise-2_1"],
+      "next_concepts": ["for_loops", "indexing"]
+    },
+    "exercise-1_14": {
+      "primary_concept": "for_loops",
+      "concepts": ["for_loops", "lists", "ranges"],
+      "difficulty": 3,
+      "next_exercises": ["exercise-1_15", "exercise-1_17"],
+      "next_concepts": ["accumulators", "functions"]
+    },
+    "exercise-1_15": {
+      "primary_concept": "accumulators",
+      "concepts": ["functions", "for_loops", "accumulators", "lists"],
+      "difficulty": 3,
+      "next_exercises": ["exercise-1_17", "exercise-2_2"],
+      "next_concepts": ["nested_lists"]
+    },
+    "exercise-1_17": {
+      "primary_concept": "accumulators",
+      "concepts": ["for_loops", "accumulators", "variables"],
+      "difficulty": 3,
+      "next_exercises": ["exercise-1_18", "exercise-1_19"],
+      "next_concepts": ["simulation"]
+    },
+    "exercise-2_1": {
+      "primary_concept": "lists",
+      "concepts": ["lists", "indexing", "mutation"],
+      "difficulty": 2,
+      "next_exercises": ["exercise-2_2", "exercise-2_3"],
+      "next_concepts": ["nested_lists", "functions"]
+    },
+    "exercise-2_4": {
+      "primary_concept": "functions",
+      "concepts": ["functions", "for_loops", "accumulators", "conditionals"],
+      "difficulty": 2,
+      "next_exercises": ["exercise-2_5", "exercise-2_6"],
+      "next_concepts": ["path_iteration"]
+    },
+    "exercise-2_7": {
+      "primary_concept": "conditionals",
+      "concepts": ["functions", "for_loops", "lists", "conditionals", "nested_loops"],
+      "difficulty": 4,
+      "next_exercises": ["exercise-2_8", "exercise-2_9"],
+      "next_concepts": ["numpy_arrays", "indexing"]
+    },
+    "exercise-3_5": {
+      "primary_concept": "exceptions",
+      "concepts": ["functions", "exceptions", "conditionals", "input_validation"],
+      "difficulty": 3,
+      "next_exercises": ["exercise-3_6", "exercise-3_7"],
+      "next_concepts": ["files"]
+    },
+    "exercise-3_7": {
+      "primary_concept": "files",
+      "concepts": ["files", "parsing", "lists", "type_conversion"],
+      "difficulty": 3,
+      "next_exercises": ["exercise-3_8", "exercise-3_9"],
+      "next_concepts": ["data_processing"]
+    },
+    "exercise-4_2": {
+      "primary_concept": "dictionaries",
+      "concepts": ["dictionaries", "comprehensions", "key_value_mapping"],
+      "difficulty": 2,
+      "next_exercises": ["exercise-4_3", "exercise-4_5"],
+      "next_concepts": ["classes"]
+    },
+    "exercise-4_6": {
+      "primary_concept": "classes",
+      "concepts": ["classes", "methods", "constructors", "state_mutation"],
+      "difficulty": 2,
+      "next_exercises": ["exercise-4_7", "exercise-4_8"],
+      "next_concepts": ["operator_overloading"]
+    },
+    "exercise-5_1": {
+      "primary_concept": "classes",
+      "concepts": ["classes", "methods", "special_methods", "operator_overloading", "object_composition"],
+      "difficulty": 4,
+      "next_exercises": ["exercise-5_2"],
+      "next_concepts": ["computational_geometry"]
+    }
+  }
+}

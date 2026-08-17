@@ -1,0 +1,27 @@
+{
+  "batchVersion": "formal-heldout-v1-draft-b01",
+  "annotationGuideVersion": "annotation-guide-v1",
+  "annotationProtocolFreezeTag": "annotation-protocol-v1",
+  "file": "formal_states_v1.draft.jsonl",
+  "stateCount": 12,
+  "sha256": "087B16EA3736A6A4E10EF6F12FED37E2B049E0A268FF0EB09B06E23F3D91D4F3",
+  "hashCanonicalization": "UTF-8 text with CRLF normalized to LF",
+  "strata": {
+    "needs_evidence": 2,
+    "first_failure": 2,
+    "repeated_failure": 2,
+    "developing_pass": 2,
+    "established_pass": 2,
+    "narrow_pass": 2
+  },
+  "sources": {
+    "course_verified": 8,
+    "generated_attempt": 2,
+    "generic_llm": 2
+  },
+  "counterfactualPairCount": 6,
+  "formalPackComplete": false,
+  "policyOutputsObserved": false,
+  "referenceLabelsPresent": false,
+  "createdAt": "2026-07-15"
+}

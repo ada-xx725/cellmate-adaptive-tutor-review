@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "stateId": "demo-action-04-similar",
+  "participantId": "demo-learner",
+  "policy": "full_adaptive",
+  "policyVersion": "full-adaptive-v1",
+  "taskSpec": {
+    "id": "demo-sum-values-pass",
+    "sourceMode": "generated_attempt",
+    "taskSummary": "Sum all values with a running total",
+    "expectedBehavior": "Return the sum of all list elements",
+    "title": "Sum list values",
+    "promptMarkdown": "Use a loop and an accumulator.",
+    "targetConcepts": [
+      "functions",
+      "for_loops",
+      "accumulators",
+      "lists"
+    ],
+    "primaryConcept": "accumulators",
+    "difficulty": 2,
+    "confidence": 1
+  },
+  "evidence": {
+    "status": "passed",
+    "summary": "5/5 generated checks passed",
+    "source": "llm_generated_tests",
+    "confidence": "high",
+    "hasReliableCheck": true
+  },
+  "learnerBefore": {
+    "studentId": "demo-learner",
+    "mastery": {
+      "functions": 52,
+      "for_loops": 58,
+      "accumulators": 58,
+      "lists": 55
+    }
+  },
+  "history": [],
+  "status": "action",
+  "action": "SIMILAR",
+  "reasonCodes": [
+    "MASTERY_BELOW_70"
+  ],
+  "evidenceUsed": [
+    "status:passed",
+    "source:llm_generated_tests",
+    "confidence:high",
+    "reliable:true"
+  ],
+  "learnerAfter": {
+    "studentId": "demo-learner",
+    "mastery": {
+      "functions": 60,
+      "for_loops": 66,
+      "accumulators": 66,
+      "lists": 63
+    }
+  },
+  "latencyMs": 0.0491,
+  "modelVersion": "not-used-rule-coverage",
+  "promptVersion": "not-used-rule-coverage",
+  "policyUsesLlm": false,
+  "createdAt": "2026-07-26T19:58:06.105Z",
+  "caseTitle": "First reliable success",
+  "caseDescription": "The learner passed once, but mastery is still developing, so the next task stays at a comparable level.",
+  "studentCode": "def sum_values(values):\n    total = 0\n    for value in values:\n        total += value\n    return total",
+  "expectedAction": "SIMILAR",
+  "decisionSource": "full_adaptive_policy",
+  "matchedExpectedAction": true,
+  "traceNote": "Production DecisionEngine trace using FullAdaptivePolicy on a frozen demo input."
+}

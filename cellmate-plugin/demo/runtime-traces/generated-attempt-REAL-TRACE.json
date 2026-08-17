@@ -1,0 +1,117 @@
+﻿{
+    "schemaVersion":  2,
+    "stateId":  "88fbcb2ccdeb21bd3f2c3213511f2272212f546e441b007d9c0a8e9b80c696f5",
+    "participantId":  "final-demo-selfstudy-01",
+    "policy":  "llm_adaptive",
+    "policyVersion":  "llm-next-step-v3",
+    "taskSpec":  {
+                     "id":  "selfstudy:accumulators:5daaa66f-dbe4-4e59-97d0-74a894dec1cf",
+                     "sourceMode":  "generated_attempt",
+                     "taskSummary":  "Self-study mini task: running total",
+                     "expectedBehavior":  "Write `sum_small_numbers(values)` to return the sum of all numbers in `values`. Use a running total that starts at zero and update it inside a `for` loop.",
+                     "title":  "Self-study mini task: running total",
+                     "promptMarkdown":  "Write `sum_small_numbers(values)` to return the sum of all numbers in `values`. Use a running total that starts at zero and update it inside a `for` loop.",
+                     "targetConcepts":  [
+                                            "for_loops",
+                                            "accumulators",
+                                            "variables"
+                                        ],
+                     "primaryConcept":  "accumulators",
+                     "difficulty":  1,
+                     "confidence":  0.9,
+                     "expectedFunction":  "def sum_even_numbers(numbers: list) -\u003e int:",
+                     "generatedTests":  "assert sum_small_numbers([1, 2, 3]) == 6\nassert sum_small_numbers([]) == 0\nassert sum_small_numbers([5, -2, 1]) == 4\n",
+                     "learningGoal":  "I want to practise for loops and accumulators.",
+                     "exercise":  {
+                                      "id":  "selfstudy:accumulators:5daaa66f-dbe4-4e59-97d0-74a894dec1cf",
+                                      "origin":  "generated",
+                                      "originMode":  "self_study_goal",
+                                      "parentId":  "selfstudy",
+                                      "action":  "SIMILAR",
+                                      "title":  "Self-study mini task: running total",
+                                      "promptMarkdown":  "Write `sum_small_numbers(values)` to return the sum of all numbers in `values`. Use a running total that starts at zero and update it inside a `for` loop.",
+                                      "targetConcepts":  [
+                                                             "for_loops",
+                                                             "accumulators",
+                                                             "variables"
+                                                         ],
+                                      "primaryConcept":  "accumulators",
+                                      "difficulty":  1,
+                                      "starterCode":  "# EXERCISE_ID: selfstudy:accumulators:5daaa66f-dbe4-4e59-97d0-74a894dec1cf\n# ADAPTIVE_SOURCE_MODE: self_study_goal\n# TARGET_CONCEPTS: for_loops, accumulators, variables\ndef sum_small_numbers(values):\n    raise NotImplementedError\n",
+                                      "referenceSolution":  "def sum_small_numbers(values):\n    total = 0\n    for value in values:\n        total += value\n    return total\n",
+                                      "negativeCandidate":  "def sum_small_numbers(values):\n    total = 0\n    for value in values:\n        total = value\n    return total\n",
+                                      "testCode":  "assert sum_small_numbers([1, 2, 3]) == 6\nassert sum_small_numbers([]) == 0\nassert sum_small_numbers([5, -2, 1]) == 4\n",
+                                      "model":  "fallback-template",
+                                      "promptVersion":  "self-study-goal-mvp-v1",
+                                      "createdAt":  "2026-07-26T14:59:53.288Z",
+                                      "validated":  true,
+                                      "fallbackUsed":  true,
+                                      "validationStatus":  "fallback",
+                                      "learningGoal":  "I want to practise for loops and accumulators.",
+                                      "taskSpec":  {
+                                                       "id":  "selfstudy-goal:87dddb127637",
+                                                       "sourceMode":  "self_study_goal",
+                                                       "learningGoal":  "I want to practise for loops and accumulators.",
+                                                       "taskSummary":  "Write a function that takes a list of numbers and returns the sum of all the even numbers using a for loop and an accumulator variable.",
+                                                       "expectedBehavior":  "The function iterates over each number in the input list, adds the number to an accumulator if it is even, and returns the final accumulated sum.",
+                                                       "title":  "Write a function that takes a list of numbers and returns the sum of all the even numbers using a for loop and an accumulator variable.",
+                                                       "promptMarkdown":  "Goal: I want to practise for loops and accumulators.",
+                                                       "targetConcepts":  [
+                                                                              "for_loops",
+                                                                              "accumulators",
+                                                                              "variables"
+                                                                          ],
+                                                       "primaryConcept":  "accumulators",
+                                                       "difficulty":  1,
+                                                       "confidence":  0.75,
+                                                       "expectedFunction":  "def sum_even_numbers(numbers: list) -\u003e int:"
+                                                   }
+                                  }
+                 },
+    "evidence":  {
+                     "status":  "passed",
+                     "summary":  "",
+                     "confidence":  "high",
+                     "hasReliableCheck":  true,
+                     "source":  "llm_generated_tests"
+                 },
+    "learnerBefore":  {
+                          "studentId":  "final-demo-selfstudy-01",
+                          "mastery":  {
+
+                                      }
+                      },
+    "history":  [
+
+                ],
+    "status":  "action",
+    "action":  "SIMILAR",
+    "reasonCodes":  [
+                        "LLM_SELECTED"
+                    ],
+    "evidenceUsed":  [
+                         "status:passed",
+                         "source:llm_generated_tests",
+                         "confidence:high",
+                         "reliable:true"
+                     ],
+    "learnerAfter":  {
+                         "studentId":  "final-demo-selfstudy-01",
+                         "mastery":  {
+                                         "for_loops":  58,
+                                         "accumulators":  58,
+                                         "variables":  58
+                                     }
+                     },
+    "latencyMs":  1238,
+    "modelVersion":  "gpt-4.1-mini",
+    "promptVersion":  "llm-next-step-v3",
+    "policyUsesLlm":  true,
+    "fallbackUsed":  false,
+    "selectionExplanation":  "The learner has passed the current task with high confidence, indicating initial mastery of accumulators. Practicing a similar task will reinforce the concept before moving on.",
+    "selectionConfidence":  0.9,
+    "selectionEvidenceReferences":  [
+                                        "llm_generated_tests"
+                                    ],
+    "createdAt":  "2026-07-26T15:12:12.786Z"
+}

@@ -1,0 +1,701 @@
+{
+  "courseCommit": "4317489856e3ece9d61e78638416c2e5451bf8bb",
+  "exercises": [
+    {
+      "id": "exercise-1_2",
+      "lecture": 1,
+      "exercise": 2,
+      "title": "Convert from metres to British length units",
+      "concepts": [
+        "variables",
+        "arithmetic_operations",
+        "unit_conversion",
+        "sequential_assignment"
+      ],
+      "notebook": "lecture1/lecture1.ipynb",
+      "primary_concept": "arithmetic_operations",
+      "difficulty": 1,
+      "next_exercises": [
+        "exercise-1_3",
+        "exercise-1_4"
+      ],
+      "next_concepts": [
+        "compound_expressions",
+        "functions"
+      ]
+    },
+    {
+      "id": "exercise-1_3",
+      "lecture": 1,
+      "exercise": 3,
+      "title": "Compute the air resistance on a football",
+      "concepts": [
+        "variables",
+        "arithmetic_operations",
+        "compound_expressions",
+        "sequential_assignment"
+      ],
+      "notebook": "lecture1/lecture1.ipynb",
+      "primary_concept": "arithmetic_operations",
+      "difficulty": 2,
+      "next_exercises": [
+        "exercise-1_4",
+        "exercise-1_5"
+      ],
+      "next_concepts": [
+        "functions"
+      ]
+    },
+    {
+      "id": "exercise-1_4",
+      "lecture": 1,
+      "exercise": 4,
+      "title": "Compute the growth of money in a bank",
+      "concepts": [
+        "variables",
+        "arithmetic_operations",
+        "exponentiation",
+        "sequential_assignment"
+      ],
+      "notebook": "lecture1/lecture1.ipynb",
+      "primary_concept": "arithmetic_operations",
+      "difficulty": 2,
+      "next_exercises": [
+        "exercise-1_5",
+        "exercise-1_7"
+      ],
+      "next_concepts": [
+        "functions"
+      ]
+    },
+    {
+      "id": "exercise-1_5",
+      "lecture": 1,
+      "exercise": 5,
+      "title": "Evaluate a Gaussian function",
+      "concepts": [
+        "functions",
+        "parameters",
+        "arithmetic_operations",
+        "return_values"
+      ],
+      "notebook": "lecture1/lecture1.ipynb",
+      "primary_concept": "functions",
+      "difficulty": 2,
+      "next_exercises": [
+        "exercise-1_7",
+        "exercise-1_15"
+      ],
+      "next_concepts": [
+        "for_loops",
+        "lists"
+      ]
+    },
+    {
+      "id": "exercise-1_6",
+      "lecture": 1,
+      "exercise": 6,
+      "title": "Find and fix errors in the coding of a formula",
+      "concepts": [
+        "arithmetic_operations",
+        "expressions",
+        "debugging"
+      ],
+      "notebook": "lecture1/lecture1.ipynb",
+      "primary_concept": "arithmetic_operations",
+      "difficulty": 2,
+      "next_exercises": [
+        "exercise-1_7",
+        "exercise-1_8"
+      ],
+      "next_concepts": [
+        "functions"
+      ]
+    },
+    {
+      "id": "exercise-1_7",
+      "lecture": 1,
+      "exercise": 7,
+      "title": "Implement a Gaussian function",
+      "concepts": [
+        "functions",
+        "parameters",
+        "return_values",
+        "arithmetic_operations"
+      ],
+      "notebook": "lecture1/lecture1.ipynb",
+      "primary_concept": "functions",
+      "difficulty": 2,
+      "next_exercises": [
+        "exercise-1_15"
+      ],
+      "next_concepts": [
+        "for_loops",
+        "accumulators"
+      ]
+    },
+    {
+      "id": "exercise-1_8",
+      "lecture": 1,
+      "exercise": 8,
+      "title": "How to cook the perfect egg",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture1/lecture1.ipynb"
+    },
+    {
+      "id": "exercise-1_9",
+      "lecture": 1,
+      "exercise": 9,
+      "title": "Kepler's third law",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture1/lecture1.ipynb"
+    },
+    {
+      "id": "exercise-1_11",
+      "lecture": 1,
+      "exercise": 11,
+      "title": "Compute the number of digits in a positive integer $a$",
+      "concepts": [
+        "functions",
+        "for_loops",
+        "accumulators",
+        "integer_division"
+      ],
+      "notebook": "lecture1/lecture1.ipynb",
+      "primary_concept": "for_loops",
+      "difficulty": 2,
+      "next_exercises": [
+        "exercise-1_12",
+        "exercise-1_13"
+      ],
+      "next_concepts": [
+        "lists"
+      ]
+    },
+    {
+      "id": "exercise-1_12",
+      "lecture": 1,
+      "exercise": 12,
+      "title": "Write an approximate Fahrenheit-Celsius conversion table",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture1/lecture1.ipynb"
+    },
+    {
+      "id": "exercise-1_13",
+      "lecture": 1,
+      "exercise": 13,
+      "title": "Store odd numbers in a list",
+      "concepts": [
+        "lists",
+        "variables",
+        "ranges"
+      ],
+      "notebook": "lecture1/lecture1.ipynb",
+      "primary_concept": "lists",
+      "difficulty": 2,
+      "next_exercises": [
+        "exercise-1_14",
+        "exercise-2_1"
+      ],
+      "next_concepts": [
+        "for_loops",
+        "indexing"
+      ]
+    },
+    {
+      "id": "exercise-1_14",
+      "lecture": 1,
+      "exercise": 14,
+      "title": "Create a list of even numbers ranging from 0 to $n$ using a `for` loop.",
+      "concepts": [
+        "for_loops",
+        "lists",
+        "ranges"
+      ],
+      "notebook": "lecture1/lecture1.ipynb",
+      "primary_concept": "for_loops",
+      "difficulty": 3,
+      "next_exercises": [
+        "exercise-1_15",
+        "exercise-1_17"
+      ],
+      "next_concepts": [
+        "accumulators",
+        "functions"
+      ]
+    },
+    {
+      "id": "exercise-1_15",
+      "lecture": 1,
+      "exercise": 15,
+      "title": "Implement the sum function",
+      "concepts": [
+        "functions",
+        "for_loops",
+        "accumulators",
+        "lists"
+      ],
+      "notebook": "lecture1/lecture1.ipynb",
+      "primary_concept": "accumulators",
+      "difficulty": 3,
+      "next_exercises": [
+        "exercise-1_17",
+        "exercise-2_2"
+      ],
+      "next_concepts": [
+        "nested_lists"
+      ]
+    },
+    {
+      "id": "exercise-1_16",
+      "lecture": 1,
+      "exercise": 16,
+      "title": "Position of the ball in a vertical motion.",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture1/lecture1.ipynb"
+    },
+    {
+      "id": "exercise-1_17",
+      "lecture": 1,
+      "exercise": 17,
+      "title": "Cumulative sum",
+      "concepts": [
+        "for_loops",
+        "accumulators",
+        "variables"
+      ],
+      "notebook": "lecture1/lecture1.ipynb",
+      "primary_concept": "accumulators",
+      "difficulty": 3,
+      "next_exercises": [
+        "exercise-1_18",
+        "exercise-1_19"
+      ],
+      "next_concepts": [
+        "simulation"
+      ]
+    },
+    {
+      "id": "exercise-1_18",
+      "lecture": 1,
+      "exercise": 18,
+      "title": "Bouncing ball",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture1/lecture1.ipynb"
+    },
+    {
+      "id": "exercise-1_19",
+      "lecture": 1,
+      "exercise": 19,
+      "title": "Calculate $\\pi$",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture1/lecture1.ipynb"
+    },
+    {
+      "id": "exercise-2_1",
+      "lecture": 2,
+      "exercise": 1,
+      "title": "Create a list and modify it.",
+      "concepts": [
+        "lists",
+        "indexing",
+        "mutation"
+      ],
+      "notebook": "lecture2/lecture2.ipynb",
+      "primary_concept": "lists",
+      "difficulty": 2,
+      "next_exercises": [
+        "exercise-2_2",
+        "exercise-2_3"
+      ],
+      "next_concepts": [
+        "nested_lists",
+        "functions"
+      ]
+    },
+    {
+      "id": "exercise-2_2",
+      "lecture": 2,
+      "exercise": 2,
+      "title": "Make a table (a list of lists) of function values",
+      "concepts": [
+        "functions",
+        "lists"
+      ],
+      "notebook": "lecture2/lecture2.ipynb"
+    },
+    {
+      "id": "exercise-2_3",
+      "lecture": 2,
+      "exercise": 3,
+      "title": "Express a step (Heaviside) function as a Python function",
+      "concepts": [
+        "functions"
+      ],
+      "notebook": "lecture2/lecture2.ipynb"
+    },
+    {
+      "id": "exercise-2_4",
+      "lecture": 2,
+      "exercise": 4,
+      "title": "Implement the factorial function",
+      "concepts": [
+        "functions",
+        "for_loops",
+        "accumulators",
+        "conditionals"
+      ],
+      "notebook": "lecture2/lecture2.ipynb",
+      "primary_concept": "functions",
+      "difficulty": 2,
+      "next_exercises": [
+        "exercise-2_5",
+        "exercise-2_6"
+      ],
+      "next_concepts": [
+        "path_iteration"
+      ]
+    },
+    {
+      "id": "exercise-2_5",
+      "lecture": 2,
+      "exercise": 5,
+      "title": "Compute the length of a path",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture2/lecture2.ipynb"
+    },
+    {
+      "id": "exercise-2_6",
+      "lecture": 2,
+      "exercise": 6,
+      "title": "Approximate $\\pi$",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture2/lecture2.ipynb"
+    },
+    {
+      "id": "exercise-2_7",
+      "lecture": 2,
+      "exercise": 7,
+      "title": "Make a list of prime numbers",
+      "concepts": [
+        "functions",
+        "for_loops",
+        "lists",
+        "conditionals",
+        "nested_loops"
+      ],
+      "notebook": "lecture2/lecture2.ipynb",
+      "primary_concept": "conditionals",
+      "difficulty": 4,
+      "next_exercises": [
+        "exercise-2_8",
+        "exercise-2_9"
+      ],
+      "next_concepts": [
+        "numpy_arrays",
+        "indexing"
+      ]
+    },
+    {
+      "id": "exercise-2_8",
+      "lecture": 2,
+      "exercise": 8,
+      "title": "Fill lists and arrays with function values",
+      "concepts": [
+        "functions",
+        "lists"
+      ],
+      "notebook": "lecture2/lecture2.ipynb"
+    },
+    {
+      "id": "exercise-2_9",
+      "lecture": 2,
+      "exercise": 9,
+      "title": "Explore array slicing",
+      "concepts": [
+        "lists"
+      ],
+      "notebook": "lecture2/lecture2.ipynb"
+    },
+    {
+      "id": "exercise-2_10",
+      "lecture": 2,
+      "exercise": 10,
+      "title": "Matrix-vector multiplication",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture2/lecture2.ipynb"
+    },
+    {
+      "id": "exercise-2_11",
+      "lecture": 2,
+      "exercise": 11,
+      "title": "Vectorised function",
+      "concepts": [
+        "functions"
+      ],
+      "notebook": "lecture2/lecture2.ipynb"
+    },
+    {
+      "id": "exercise-2_12",
+      "lecture": 2,
+      "exercise": 12,
+      "title": "Matrix-matrix multiplication",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture2/lecture2.ipynb"
+    },
+    {
+      "id": "exercise-2_13",
+      "lecture": 2,
+      "exercise": 13,
+      "title": "2D array slicing",
+      "concepts": [
+        "lists"
+      ],
+      "notebook": "lecture2/lecture2.ipynb"
+    },
+    {
+      "id": "exercise-3_4",
+      "lecture": 3,
+      "exercise": 4,
+      "title": "Test more in the program",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture3/lecture3.ipynb"
+    },
+    {
+      "id": "exercise-3_5",
+      "lecture": 3,
+      "exercise": 5,
+      "title": "Implement the factorial function with exception handling",
+      "concepts": [
+        "functions",
+        "exceptions",
+        "conditionals",
+        "input_validation"
+      ],
+      "notebook": "lecture3/lecture3.ipynb",
+      "primary_concept": "exceptions",
+      "difficulty": 3,
+      "next_exercises": [
+        "exercise-3_6",
+        "exercise-3_7"
+      ],
+      "next_concepts": [
+        "files"
+      ]
+    },
+    {
+      "id": "exercise-3_6",
+      "lecture": 3,
+      "exercise": 6,
+      "title": "Wave speed",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture3/lecture3.ipynb"
+    },
+    {
+      "id": "exercise-3_7",
+      "lecture": 3,
+      "exercise": 7,
+      "title": "Read a two-column data file",
+      "concepts": [
+        "files",
+        "parsing",
+        "lists",
+        "type_conversion"
+      ],
+      "notebook": "lecture3/lecture3.ipynb",
+      "primary_concept": "files",
+      "difficulty": 3,
+      "next_exercises": [
+        "exercise-3_8",
+        "exercise-3_9"
+      ],
+      "next_concepts": [
+        "data_processing"
+      ]
+    },
+    {
+      "id": "exercise-3_8",
+      "lecture": 3,
+      "exercise": 8,
+      "title": "Read a data file",
+      "concepts": [
+        "files"
+      ],
+      "notebook": "lecture3/lecture3.ipynb"
+    },
+    {
+      "id": "exercise-3_9",
+      "lecture": 3,
+      "exercise": 9,
+      "title": "Read acceleration data and find velocities",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture3/lecture3.ipynb"
+    },
+    {
+      "id": "exercise-4_1",
+      "lecture": 4,
+      "exercise": 1,
+      "title": "Make a dictionary from a table",
+      "concepts": [
+        "dictionaries"
+      ],
+      "notebook": "lecture4/lecture4.ipynb"
+    },
+    {
+      "id": "exercise-4_2",
+      "lecture": 4,
+      "exercise": 2,
+      "title": "Reverse a dictionary",
+      "concepts": [
+        "dictionaries",
+        "comprehensions",
+        "key_value_mapping"
+      ],
+      "notebook": "lecture4/lecture4.ipynb",
+      "primary_concept": "dictionaries",
+      "difficulty": 2,
+      "next_exercises": [
+        "exercise-4_3",
+        "exercise-4_5"
+      ],
+      "next_concepts": [
+        "classes"
+      ]
+    },
+    {
+      "id": "exercise-4_3",
+      "lecture": 4,
+      "exercise": 3,
+      "title": "Compute the area of a triangle",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture4/lecture4.ipynb"
+    },
+    {
+      "id": "exercise-4_5",
+      "lecture": 4,
+      "exercise": 5,
+      "title": "Make a class for function evaluation.",
+      "concepts": [
+        "functions",
+        "loops",
+        "classes"
+      ],
+      "notebook": "lecture4/lecture4.ipynb"
+    },
+    {
+      "id": "exercise-4_6",
+      "lecture": 4,
+      "exercise": 6,
+      "title": "Make a simple class",
+      "concepts": [
+        "classes",
+        "methods",
+        "constructors",
+        "state_mutation"
+      ],
+      "notebook": "lecture4/lecture4.ipynb",
+      "primary_concept": "classes",
+      "difficulty": 2,
+      "next_exercises": [
+        "exercise-4_7",
+        "exercise-4_8"
+      ],
+      "next_concepts": [
+        "operator_overloading"
+      ]
+    },
+    {
+      "id": "exercise-4_7",
+      "lecture": 4,
+      "exercise": 7,
+      "title": "Extend a class",
+      "concepts": [
+        "classes"
+      ],
+      "notebook": "lecture4/lecture4.ipynb"
+    },
+    {
+      "id": "exercise-4_8",
+      "lecture": 4,
+      "exercise": 8,
+      "title": "Make a class for straight lines",
+      "concepts": [
+        "loops",
+        "classes"
+      ],
+      "notebook": "lecture4/lecture4.ipynb"
+    },
+    {
+      "id": "exercise-4_9",
+      "lecture": 4,
+      "exercise": 9,
+      "title": "Make a class for quadratic functions",
+      "concepts": [
+        "functions",
+        "loops",
+        "classes"
+      ],
+      "notebook": "lecture4/lecture4.ipynb"
+    },
+    {
+      "id": "exercise-5_1",
+      "lecture": 5,
+      "exercise": 1,
+      "title": "Exercise 5.1",
+      "concepts": [
+        "classes",
+        "methods",
+        "special_methods",
+        "operator_overloading",
+        "object_composition"
+      ],
+      "notebook": "lecture5/lecture5.ipynb",
+      "primary_concept": "classes",
+      "difficulty": 4,
+      "next_exercises": [
+        "exercise-5_2"
+      ],
+      "next_concepts": [
+        "computational_geometry"
+      ]
+    },
+    {
+      "id": "exercise-5_2",
+      "lecture": 5,
+      "exercise": 2,
+      "title": "Exercise 5.2",
+      "concepts": [
+        "python_basics"
+      ],
+      "notebook": "lecture5/lecture5.ipynb"
+    }
+  ]
+}

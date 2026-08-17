@@ -1,0 +1,47 @@
+{
+  "exerciseId": "count_at_least",
+  "code": "def count_at_least(values, threshold):\n    count = 0\n    for value in values:\n        if value > threshold:\n            count = count + 1\n    return count\n",
+  "attemptCount": 1,
+  "previousMistakeTypes": [],
+  "testResult": {
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "report": {
+      "tests": [
+        {
+          "nodeid": "test_hidden.py::test_threshold_included",
+          "outcome": "failed",
+          "call": {
+            "longrepr": {
+              "reprcrash": {
+                "message": "assert 1 == 2"
+              }
+            }
+          }
+        },
+        {
+          "nodeid": "test_hidden.py::test_single_boundary_value",
+          "outcome": "failed",
+          "call": {
+            "longrepr": {
+              "reprcrash": {
+                "message": "assert 0 == 1"
+              }
+            }
+          }
+        },
+        {
+          "nodeid": "test_hidden.py::test_no_matching_values",
+          "outcome": "passed"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "concepts": [
+      "conditionals",
+      "boundary-case"
+    ]
+  }
+}

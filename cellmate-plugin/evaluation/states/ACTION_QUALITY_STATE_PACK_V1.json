@@ -1,0 +1,242 @@
+{
+  "statePackVersion": "action-quality-states-v1",
+  "protocolVersion": "action-quality-protocol-v1",
+  "annotationGuideVersion": "annotation-guide-v1",
+  "schemaVersion": 1,
+  "file": "action-quality-v1.jsonl",
+  "stateCount": 60,
+  "sha256": "20050FD744C9084CFD539344176CA2FB3076FEBE12913F7904EBA699DE897FE1",
+  "hashCanonicalization": "UTF-8 text with CRLF normalized to LF",
+  "strata": {
+    "first_failure": 10,
+    "repeated_failure": 12,
+    "developing_pass": 10,
+    "established_pass": 10,
+    "needs_evidence": 8,
+    "narrow_pass": 10
+  },
+  "sources": {
+    "course_verified": 40,
+    "generated_attempt": 10,
+    "generic_llm": 10
+  },
+  "counterfactualPairCount": 30,
+  "invarianceGroupCount": 22,
+  "invarianceGroups": [
+    {
+      "groupId": "inv-course-failure-01-member-1",
+      "stateIds": [
+        "heldout-001",
+        "heldout-003"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-failure-01-member-2",
+      "stateIds": [
+        "heldout-002",
+        "heldout-004"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-failure-02-member-1",
+      "stateIds": [
+        "heldout-005",
+        "heldout-007"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-failure-02-member-2",
+      "stateIds": [
+        "heldout-006",
+        "heldout-008"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-failure-03-member-1",
+      "stateIds": [
+        "heldout-009",
+        "heldout-011"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-failure-03-member-2",
+      "stateIds": [
+        "heldout-010",
+        "heldout-012"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-failure-04-member-1",
+      "stateIds": [
+        "heldout-013",
+        "heldout-015"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-failure-04-member-2",
+      "stateIds": [
+        "heldout-014",
+        "heldout-016"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-generated-failure-01-member-1",
+      "stateIds": [
+        "heldout-017",
+        "heldout-019"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-generated-failure-01-member-2",
+      "stateIds": [
+        "heldout-018",
+        "heldout-020"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-pass-01-member-1",
+      "stateIds": [
+        "heldout-023",
+        "heldout-025"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-pass-01-member-2",
+      "stateIds": [
+        "heldout-024",
+        "heldout-026"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-pass-02-member-1",
+      "stateIds": [
+        "heldout-027",
+        "heldout-029"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-pass-02-member-2",
+      "stateIds": [
+        "heldout-028",
+        "heldout-030"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-pass-03-member-1",
+      "stateIds": [
+        "heldout-031",
+        "heldout-033"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-pass-03-member-2",
+      "stateIds": [
+        "heldout-032",
+        "heldout-034"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-generic-pass-01-member-1",
+      "stateIds": [
+        "heldout-037",
+        "heldout-039"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-generic-pass-01-member-2",
+      "stateIds": [
+        "heldout-038",
+        "heldout-040"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-needs-01-member-1",
+      "stateIds": [
+        "heldout-043",
+        "heldout-045"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-needs-01-member-2",
+      "stateIds": [
+        "heldout-044",
+        "heldout-046"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-narrow-01-member-1",
+      "stateIds": [
+        "heldout-051",
+        "heldout-053"
+      ],
+      "relation": "meaning_preserving_rewording"
+    },
+    {
+      "groupId": "inv-course-narrow-01-member-2",
+      "stateIds": [
+        "heldout-052",
+        "heldout-054"
+      ],
+      "relation": "meaning_preserving_rewording"
+    }
+  ],
+  "courseCommit": "4317489856e3ece9d61e78638416c2e5451bf8bb",
+  "courseExercises": [
+    "exercise-1_11",
+    "exercise-1_15",
+    "exercise-1_6",
+    "exercise-2_4",
+    "exercise-2_7",
+    "exercise-3_5",
+    "exercise-3_7",
+    "exercise-4_2",
+    "exercise-4_6",
+    "exercise-5_1"
+  ],
+  "courseLectures": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "evaluationSetExercises": [
+    "exercise-1_11",
+    "exercise-1_15",
+    "exercise-1_6",
+    "exercise-2_4",
+    "exercise-2_7",
+    "exercise-3_5",
+    "exercise-3_7",
+    "exercise-4_2",
+    "exercise-4_6",
+    "exercise-5_1"
+  ],
+  "generator": "evaluation/annotation/buildActionQualityStatePack.js",
+  "generatorSha256": "C4DCE066988DE9E65C8F2049FAD396A7B0D4F4EA7424BCEFA238EBDDFAFFA259",
+  "constructedData": true,
+  "policyOutputsObserved": false,
+  "referenceLabelsPresent": false,
+  "formalResultsPresent": false,
+  "createdAt": "2026-08-10"
+}

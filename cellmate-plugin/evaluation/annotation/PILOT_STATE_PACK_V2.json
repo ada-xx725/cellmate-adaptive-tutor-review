@@ -1,0 +1,11 @@
+{
+  "statePackVersion": "pilot-state-pack-v2",
+  "guideVersion": "pilot-guide-v2",
+  "file": "pilot_states_v2.jsonl",
+  "stateCount": 8,
+  "sha256": "3B598C5C4504EAFD5D1FD214BA0B1B9F8FE42568046B747C1852468D368DC38A",
+  "hashCanonicalization": "UTF-8 text with CRLF normalized to LF",
+  "pilotOnly": true,
+  "formalHeldoutEligible": false,
+  "createdAt": "2026-07-15"
+}

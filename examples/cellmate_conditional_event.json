@@ -1,0 +1,55 @@
+{
+  "exerciseId": "sum_positive",
+  "code": "def sum_positive(values):\n    total = 0\n    for value in values:\n        total = total + value\n    return total\n",
+  "attemptCount": 1,
+  "previousMistakeTypes": [],
+  "testResult": {
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "report": {
+      "tests": [
+        {
+          "nodeid": "test_hidden.py::test_mixed_positives",
+          "outcome": "failed",
+          "call": {
+            "longrepr": {
+              "reprcrash": {
+                "message": "assert 5 == 7"
+              }
+            }
+          }
+        },
+        {
+          "nodeid": "test_hidden.py::test_all_negative",
+          "outcome": "failed",
+          "call": {
+            "longrepr": {
+              "reprcrash": {
+                "message": "assert -6 == 0"
+              }
+            }
+          }
+        },
+        {
+          "nodeid": "test_hidden.py::test_includes_zero",
+          "outcome": "failed",
+          "call": {
+            "longrepr": {
+              "reprcrash": {
+                "message": "assert 6 == 7"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "concepts": [
+      "conditionals",
+      "filtering",
+      "accumulator"
+    ]
+  }
+}

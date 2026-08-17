@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "out-evaluation",
+    "rootDir": ".",
+    "sourceMap": false
+  },
+  "include": [
+    "evaluation/**/*.ts",
+    "src/adaptive/core/**/*.ts",
+    "src/adaptive/concepts.ts",
+    "src/adaptive/policy.ts",
+    "src/adaptive/types.ts"
+  ],
+  "exclude": ["node_modules", "out", "out-evaluation"]
+}

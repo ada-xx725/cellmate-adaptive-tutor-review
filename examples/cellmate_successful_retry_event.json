@@ -1,0 +1,36 @@
+{
+  "exerciseId": "sum_numbers",
+  "code": "def sum_numbers(values):\n    total = 0\n    for value in values:\n        total = total + value\n    return total\n",
+  "attemptCount": 4,
+  "previousMistakeTypes": [
+    "accumulator_update_error"
+  ],
+  "testResult": {
+    "stdout": "",
+    "stderr": "",
+    "timeout": false,
+    "report": {
+      "tests": [
+        {
+          "nodeid": "test_hidden.py::test_positive_list",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_hidden.py::test_mixed_list",
+          "outcome": "passed"
+        },
+        {
+          "nodeid": "test_hidden.py::test_empty_list",
+          "outcome": "passed"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "concepts": [
+      "loops",
+      "accumulator",
+      "variable-update"
+    ]
+  }
+}

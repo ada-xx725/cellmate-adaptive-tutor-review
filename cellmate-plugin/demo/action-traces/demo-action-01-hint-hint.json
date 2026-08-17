@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "stateId": "demo-action-01-hint",
+  "participantId": "demo-learner",
+  "policy": "llm_adaptive",
+  "policyVersion": "llm-next-step-v5",
+  "taskSpec": {
+    "id": "demo-accumulator-01",
+    "sourceMode": "generated_attempt",
+    "taskSummary": "Sum all values with a running total",
+    "expectedBehavior": "Return the sum of all values",
+    "title": "Running total practice",
+    "promptMarkdown": "Use a for loop and update total on every iteration.",
+    "targetConcepts": [
+      "for_loops",
+      "accumulators",
+      "variables"
+    ],
+    "primaryConcept": "accumulators",
+    "difficulty": 2,
+    "confidence": 1
+  },
+  "evidence": {
+    "status": "failed",
+    "summary": "AssertionError: expected 6 but received 3; total was overwritten on each iteration",
+    "source": "pytest",
+    "confidence": "high",
+    "hasReliableCheck": true
+  },
+  "learnerBefore": {
+    "studentId": "demo-learner",
+    "mastery": {
+      "for_loops": 52,
+      "accumulators": 50,
+      "variables": 55
+    }
+  },
+  "history": [],
+  "status": "action",
+  "action": "HINT",
+  "reasonCodes": [
+    "LLM_SELECTED"
+  ],
+  "evidenceUsed": [
+    "status:failed",
+    "source:pytest",
+    "confidence:high",
+    "reliable:true"
+  ],
+  "learnerAfter": {
+    "studentId": "demo-learner",
+    "mastery": {
+      "for_loops": 46,
+      "accumulators": 44,
+      "variables": 49
+    }
+  },
+  "latencyMs": 0.6649,
+  "modelVersion": "demo-scripted-selector-replay",
+  "promptVersion": "llm-next-step-v5",
+  "policyUsesLlm": true,
+  "fallbackUsed": false,
+  "selectionExplanation": "The learner has made a first, local accumulator update error. One targeted clue is enough before adding structure or changing the task.",
+  "selectionConfidence": 0.88,
+  "selectionEvidenceReferences": [
+    "AssertionError: expected 6 but received 3; total was overwritten on each iteration",
+    "No previous failed attempt is present for this exercise."
+  ],
+  "createdAt": "2026-07-26T19:58:06.104Z",
+  "caseTitle": "First local error",
+  "caseDescription": "The learner made one clear accumulator update mistake and has not failed this task before.",
+  "studentCode": "def sum_values(values):\n    total = 0\n    for value in values:\n        total = value\n    return total",
+  "expectedAction": "HINT",
+  "decisionSource": "llm_selector_replay",
+  "matchedExpectedAction": true,
+  "traceNote": "Production LlmDecisionEngine trace using a fixed selector replay for deterministic HINT coverage; this is not a live model call."
+}

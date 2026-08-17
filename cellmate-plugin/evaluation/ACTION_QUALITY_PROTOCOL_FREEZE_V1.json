@@ -1,0 +1,25 @@
+{
+  "protocolVersion": "action-quality-protocol-v1",
+  "suiteVersion": "evaluation-policy-suite-v2",
+  "selectorPromptVersion": "llm-next-step-v6",
+  "decisionTraceSchemaVersion": 3,
+  "judgePromptVersion": "action-quality-judge-v1",
+  "statisticsVersion": "action-quality-statistics-v1",
+  "hashCanonicalization": "UTF-8 text with CRLF normalized to LF",
+  "files": {
+    "evaluation/ACTION_QUALITY_PROTOCOL_V1.md": "4BDDA53DC280B8D1D0E59CE5DB0CB5622865E325DEEB4C311A99713BC59BD462",
+    "evaluation/PROTOCOL.md": "D64DE3C79778AC17E5A180BD2FA38697ADDF6AFB8E6339A82FA32E34191D500F",
+    "src/adaptive/llmNextStepSelector.ts": "43D2D4E1EE46CE9A9CB2DDABCF7EBDB931871CAF39E297496EFAC25ACA91555D",
+    "src/adaptive/core/llmDecisionEngine.ts": "1FC7F3259262B30B1E4FDFEFBC2FB48EFB1EFA3CE915FE5A1B699505D045F3D1",
+    "src/adaptive/core/decisionTrace.ts": "F9DE71993D58F865DDFB155D5C2FF31A20487A529B7A3FE289196E19F397EBCD",
+    "src/adaptive/core/policies.ts": "B42D54C0AA1B6573274FE394BC115F3C7B43D1754A3683BA676183017B16352B",
+    "src/llmTransport.ts": "EEE2786D298AD1141EDBA561C7A8E1C117154FE3C3B0A11394A92CAF12517132",
+    "evaluation/annotation/FORMAL_STATE_SCHEMA_V1.json": "533F065F252E6F50E4F62154F55387F9C7DEF1732DC6173D75B9C8C82C002F9E",
+    "evaluation/annotation/FORMAL_STATE_AUTHORING_PROTOCOL_V1.md": "08262022A05C1A9E1C5059D1FAA92799D05CE5FD6C2B3CD5AE77F2EFB728A61B"
+  },
+  "frozenAt": "2026-08-10",
+  "formalStatePackBuilt": false,
+  "formalSelectorRunProduced": false,
+  "formalJudgeRunProduced": false,
+  "formalReportProduced": false
+}

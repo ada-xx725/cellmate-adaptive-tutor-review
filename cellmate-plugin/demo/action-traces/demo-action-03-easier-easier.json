@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "stateId": "demo-action-03-easier",
+  "participantId": "demo-learner",
+  "policy": "full_adaptive",
+  "policyVersion": "full-adaptive-v1",
+  "taskSpec": {
+    "id": "demo-sum-values",
+    "sourceMode": "generated_attempt",
+    "taskSummary": "Sum all values with a running total",
+    "expectedBehavior": "Return the sum of all list elements",
+    "title": "Sum list values",
+    "promptMarkdown": "Use a loop and an accumulator.",
+    "targetConcepts": [
+      "functions",
+      "for_loops",
+      "accumulators",
+      "lists"
+    ],
+    "primaryConcept": "accumulators",
+    "difficulty": 3,
+    "confidence": 1
+  },
+  "evidence": {
+    "status": "failed",
+    "summary": "Pytest: running total is overwritten",
+    "source": "pytest",
+    "confidence": "high",
+    "hasReliableCheck": true
+  },
+  "learnerBefore": {
+    "studentId": "demo-learner",
+    "mastery": {
+      "functions": 48,
+      "for_loops": 46,
+      "accumulators": 44,
+      "lists": 50
+    }
+  },
+  "history": [
+    {
+      "participantId": "demo-learner",
+      "fingerprint": "demo-prior-failure",
+      "exerciseId": "demo-sum-values",
+      "action": "RETRY_WITH_SCAFFOLD",
+      "evidence": {
+        "status": "failed",
+        "summary": "Pytest: running total is overwritten",
+        "source": "pytest",
+        "confidence": "high",
+        "hasReliableCheck": true
+      },
+      "taskSpec": {
+        "id": "demo-sum-values",
+        "sourceMode": "generated_attempt",
+        "taskSummary": "Sum all values with a running total",
+        "expectedBehavior": "Return the sum of all list elements",
+        "title": "Sum list values",
+        "promptMarkdown": "Use a loop and an accumulator.",
+        "targetConcepts": [
+          "functions",
+          "for_loops",
+          "accumulators",
+          "lists"
+        ],
+        "primaryConcept": "accumulators",
+        "difficulty": 3,
+        "confidence": 1
+      },
+      "createdAt": "2026-07-25T10:00:00.000Z"
+    }
+  ],
+  "status": "action",
+  "action": "EASIER",
+  "reasonCodes": [
+    "REPEATED_TASK_OR_CONCEPT_FAILURE"
+  ],
+  "evidenceUsed": [
+    "status:failed",
+    "source:pytest",
+    "confidence:high",
+    "reliable:true"
+  ],
+  "learnerAfter": {
+    "studentId": "demo-learner",
+    "mastery": {
+      "functions": 42,
+      "for_loops": 40,
+      "accumulators": 38,
+      "lists": 44
+    }
+  },
+  "latencyMs": 0.153,
+  "modelVersion": "not-used-rule-coverage",
+  "promptVersion": "not-used-rule-coverage",
+  "policyUsesLlm": false,
+  "createdAt": "2026-07-26T19:58:06.104Z",
+  "caseTitle": "Repeated same misconception",
+  "caseDescription": "The learner already received scaffolded retry support but repeated the same accumulator overwrite error.",
+  "studentCode": "def sum_values(values):\n    total = 0\n    for value in values:\n        total = value\n    return total",
+  "expectedAction": "EASIER",
+  "decisionSource": "full_adaptive_policy",
+  "matchedExpectedAction": true,
+  "traceNote": "Production DecisionEngine trace using FullAdaptivePolicy on a frozen demo input."
+}

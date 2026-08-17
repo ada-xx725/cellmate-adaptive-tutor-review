@@ -1,0 +1,20 @@
+{
+  "exerciseId": "sum_numbers",
+  "code": "def sum_numbers(values):\n    while True:\n        pass\n",
+  "attemptCount": 1,
+  "previousMistakeTypes": [],
+  "testResult": {
+    "stdout": "",
+    "stderr": "",
+    "timeout": true,
+    "report": {
+      "tests": []
+    }
+  },
+  "metadata": {
+    "concepts": [
+      "loops",
+      "execution"
+    ]
+  }
+}

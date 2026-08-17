@@ -1,0 +1,341 @@
+{
+  "statisticsVersion": "action-quality-statistics-v1",
+  "suiteVersion": "evaluation-policy-suite-v3",
+  "statePackVersion": "action-quality-states-v2",
+  "constructedStateCount": 60,
+  "seed": "20260816",
+  "bootstrapResamples": 10000,
+  "primaryConditions": [
+    "fixed-v2",
+    "full-adaptive-v1",
+    "llm-next-step-v6"
+  ],
+  "secondaryAblations": [
+    "no-history-v1"
+  ],
+  "conditions": [
+    {
+      "condition": "fixed-v2",
+      "role": "primary",
+      "runCount": 60,
+      "executionCompletion": {
+        "numerator": 60,
+        "denominator": 60,
+        "rate": 1,
+        "ci95": [
+          0.93982814785791,
+          0.9999999999999998
+        ]
+      },
+      "judgeScore": {
+        "count": 59,
+        "mean": 3.7288135593220337,
+        "sampleStandardDeviation": 1.2707655644582816,
+        "ci95": [
+          3.404557931205218,
+          4.053069187438849
+        ]
+      },
+      "hardConstraintViolation": {
+        "numerator": 0,
+        "denominator": 60,
+        "rate": 0,
+        "ci95": [
+          0,
+          0.06017185214208986
+        ]
+      },
+      "needsEvidenceAccuracy": {
+        "numerator": 60,
+        "denominator": 60,
+        "rate": 1,
+        "ci95": [
+          0.93982814785791,
+          0.9999999999999998
+        ]
+      },
+      "judgeCriticalError": {
+        "numerator": 1,
+        "denominator": 59,
+        "rate": 0.01694915254237288,
+        "ci95": [
+          0.0029982339183556445,
+          0.08995725964142297
+        ]
+      },
+      "judgeCompletionCoverage": {
+        "numerator": 59,
+        "denominator": 60,
+        "rate": 0.9833333333333333,
+        "ci95": [
+          0.9114487027240993,
+          0.9970518402052136
+        ]
+      },
+      "invarianceStability": {
+        "numerator": 22,
+        "denominator": 22,
+        "rate": 1,
+        "ci95": [
+          0.8513451253913791,
+          1
+        ]
+      }
+    },
+    {
+      "condition": "full-adaptive-v1",
+      "role": "primary",
+      "runCount": 60,
+      "executionCompletion": {
+        "numerator": 60,
+        "denominator": 60,
+        "rate": 1,
+        "ci95": [
+          0.93982814785791,
+          0.9999999999999998
+        ]
+      },
+      "judgeScore": {
+        "count": 60,
+        "mean": 3.8833333333333333,
+        "sampleStandardDeviation": 1.2768030344186079,
+        "ci95": [
+          3.560263526531496,
+          4.206403140135171
+        ]
+      },
+      "hardConstraintViolation": {
+        "numerator": 6,
+        "denominator": 60,
+        "rate": 0.1,
+        "ci95": [
+          0.04664283447388416,
+          0.20149464723978772
+        ]
+      },
+      "needsEvidenceAccuracy": {
+        "numerator": 60,
+        "denominator": 60,
+        "rate": 1,
+        "ci95": [
+          0.93982814785791,
+          0.9999999999999998
+        ]
+      },
+      "judgeCriticalError": {
+        "numerator": 1,
+        "denominator": 60,
+        "rate": 0.016666666666666666,
+        "ci95": [
+          0.0029481597947862495,
+          0.08855129727590061
+        ]
+      },
+      "judgeCompletionCoverage": {
+        "numerator": 60,
+        "denominator": 60,
+        "rate": 1,
+        "ci95": [
+          0.93982814785791,
+          0.9999999999999998
+        ]
+      },
+      "invarianceStability": {
+        "numerator": 22,
+        "denominator": 22,
+        "rate": 1,
+        "ci95": [
+          0.8513451253913791,
+          1
+        ]
+      }
+    },
+    {
+      "condition": "llm-next-step-v6",
+      "role": "primary",
+      "runCount": 60,
+      "executionCompletion": {
+        "numerator": 60,
+        "denominator": 60,
+        "rate": 1,
+        "ci95": [
+          0.93982814785791,
+          0.9999999999999998
+        ]
+      },
+      "judgeScore": {
+        "count": 58,
+        "mean": 3.7413793103448274,
+        "sampleStandardDeviation": 1.4211478536804567,
+        "ci95": [
+          3.37563855478379,
+          4.107120065905865
+        ]
+      },
+      "hardConstraintViolation": {
+        "numerator": 2,
+        "denominator": 60,
+        "rate": 0.03333333333333333,
+        "ci95": [
+          0.009189319256197877,
+          0.113637742743086
+        ]
+      },
+      "needsEvidenceAccuracy": {
+        "numerator": 60,
+        "denominator": 60,
+        "rate": 1,
+        "ci95": [
+          0.93982814785791,
+          0.9999999999999998
+        ]
+      },
+      "judgeCriticalError": {
+        "numerator": 4,
+        "denominator": 58,
+        "rate": 0.06896551724137931,
+        "ci95": [
+          0.027144247017578338,
+          0.1643366631438035
+        ]
+      },
+      "judgeCompletionCoverage": {
+        "numerator": 58,
+        "denominator": 60,
+        "rate": 0.9666666666666667,
+        "ci95": [
+          0.886362257256914,
+          0.9908106807438021
+        ]
+      },
+      "invarianceStability": {
+        "numerator": 20,
+        "denominator": 22,
+        "rate": 0.9090909090909091,
+        "ci95": [
+          0.7218505315839417,
+          0.9747045710090046
+        ]
+      },
+      "selectorFallback": {
+        "numerator": 1,
+        "denominator": 52,
+        "rate": 0.019230769230769232,
+        "ci95": [
+          0.0034028080709451597,
+          0.10120511127892247
+        ]
+      }
+    },
+    {
+      "condition": "no-history-v1",
+      "role": "secondary_ablation",
+      "runCount": 60,
+      "executionCompletion": {
+        "numerator": 60,
+        "denominator": 60,
+        "rate": 1,
+        "ci95": [
+          0.93982814785791,
+          0.9999999999999998
+        ]
+      },
+      "judgeScore": {
+        "count": 58,
+        "mean": 3.206896551724138,
+        "sampleStandardDeviation": 1.5645034040843153,
+        "ci95": [
+          2.8042624024301466,
+          3.6095307010181292
+        ]
+      },
+      "hardConstraintViolation": {
+        "numerator": 0,
+        "denominator": 60,
+        "rate": 0,
+        "ci95": [
+          0,
+          0.06017185214208986
+        ]
+      },
+      "needsEvidenceAccuracy": {
+        "numerator": 60,
+        "denominator": 60,
+        "rate": 1,
+        "ci95": [
+          0.93982814785791,
+          0.9999999999999998
+        ]
+      },
+      "judgeCriticalError": {
+        "numerator": 7,
+        "denominator": 58,
+        "rate": 0.1206896551724138,
+        "ci95": [
+          0.059709660482407195,
+          0.22879354045960884
+        ]
+      },
+      "judgeCompletionCoverage": {
+        "numerator": 58,
+        "denominator": 60,
+        "rate": 0.9666666666666667,
+        "ci95": [
+          0.886362257256914,
+          0.9908106807438021
+        ]
+      },
+      "invarianceStability": {
+        "numerator": 22,
+        "denominator": 22,
+        "rate": 1,
+        "ci95": [
+          0.8513451253913791,
+          1
+        ]
+      }
+    }
+  ],
+  "pairedDifferences": [
+    {
+      "leftCondition": "fixed-v2",
+      "rightCondition": "full-adaptive-v1",
+      "estimand": "right_minus_left_mean_judge_score",
+      "pairedStateCount": 59,
+      "meanDifference": 0.15254237288135594,
+      "ci95": [
+        -0.288135593220339,
+        0.576271186440678
+      ],
+      "seed": "20260816",
+      "resamples": 10000
+    },
+    {
+      "leftCondition": "fixed-v2",
+      "rightCondition": "llm-next-step-v6",
+      "estimand": "right_minus_left_mean_judge_score",
+      "pairedStateCount": 57,
+      "meanDifference": -0.03508771929824561,
+      "ci95": [
+        -0.2631578947368421,
+        0.21052631578947367
+      ],
+      "seed": "20260816",
+      "resamples": 10000
+    },
+    {
+      "leftCondition": "full-adaptive-v1",
+      "rightCondition": "llm-next-step-v6",
+      "estimand": "right_minus_left_mean_judge_score",
+      "pairedStateCount": 58,
+      "meanDifference": -0.13793103448275862,
+      "ci95": [
+        -0.5689655172413793,
+        0.29310344827586204
+      ],
+      "seed": "20260816",
+      "resamples": 10000
+    }
+  ],
+  "interpretationBoundary": "These statistics describe performance on the constructed blinded state pack and are not estimates of real-student learning gains."
+}

@@ -1,0 +1,211 @@
+\documentclass[final-report]{../project-plan/report-template}
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\hypersetup{hidelinks}
+
+\university{Imperial College London}
+\department{Department of Earth Science and Engineering}
+\course{MSc in Applied Computational Science and Engineering}
+\title{From Feedback to Action: Adaptive Support for Beginner Python Learning}
+\author{Xiyi Xiong}
+\email{}
+\githubusername{}
+\supervisors{Dr Marijan Beg}
+\repository{https://github.com/ese-ada-lovelace-2025/irp-xx725}
+
+\begin{document}
+
+\maketitlepage
+
+\section*{Abstract}
+
+This report describes the design and evaluation of a notebook-native adaptive
+support layer for beginner Python learning. On a frozen pack of 60 constructed
+learner states, the constrained LLM selector obtained a mean blinded-judge score
+of 3.741, compared with 3.729 for a fixed baseline and 3.883 for a rule-adaptive
+baseline. All three paired 95\% bootstrap intervals included zero, so this
+evaluation does not establish that the LLM selector outperformed either primary
+baseline. The results concern action choice on the constructed benchmark and do
+not measure real-student learning gains.
+
+\section{Introduction}
+
+% State the problem, motivation, research questions, and contributions. Update
+% the project-plan framing to match the implemented system rather than intent.
+Explain the gap between receiving feedback and choosing a useful next learning
+action, then state the final research questions and contributions.
+
+\section{Background and Related Work}
+
+% Cover automated programming feedback, next-step hints, adaptive learning, and
+% notebook-native educational tools. Add citations only from checked sources.
+Position the implemented contribution against automated feedback and adaptive
+support for introductory programming.
+
+\section{System Design and Implementation}
+
+% Describe evidence collection, deterministic gating, decision policies,
+% transport, fallbacks, notebook presentation, and reproducibility boundaries.
+Document the final architecture and the rationale for separating feedback,
+support-format selection, and next-action selection.
+
+\section{Evaluation Methodology}
+
+The formal action-quality evaluation followed
+\texttt{action-quality-protocol-v2} and
+\texttt{evaluation-policy-suite-v3}. Protocol v2 superseded the unexecuted v1
+suite after one v1 state was exposed during connectivity diagnosis. The v2 pack
+assigned new identities to all states and replaced the complete affected
+four-state cluster before any v2 model request. The resulting content-addressed
+pack contained 60 blinded constructed states: 40 course-verified states, 10
+generated-attempt states, and 10 generic-LLM states. It comprised 30
+counterfactual pairs and 22 meaning-preserving invariance groups, while covering
+the ten frozen course exercises.
+
+Every state was evaluated under the three primary conditions
+\texttt{fixed-v2}, \texttt{full-adaptive-v1}, and
+\texttt{llm-next-step-v6}, plus the secondary \texttt{no-history-v1}
+ablation. Each condition received the same converted decision input, and the
+deterministic evidence gate was applied before policy or model selection. The
+selector was \texttt{gpt-4o-mini-2024-07-18}; the judge was
+\texttt{gpt-4.1-2025-04-14}. Both were accessed through OpenAI, but through
+separate configuration namespaces.
+
+The independent judge received a blinded state and one candidate action without
+policy identity, selector model, fallback state, latency, reason codes, or other
+candidates' decisions. Candidate starts were separated by at least 3000~ms.
+Invalid output was repaired once; a second invalid output remained missing.
+The analysis used seed \texttt{20260816}, Wilson intervals for rates, normal
+intervals for mean scores, and 10,000 seeded paired bootstrap resamples for
+primary-condition score differences. Executable hard constraints were analysed
+separately from judge scores.
+
+\section{Formal Results}
+
+The selector run completed all 60 states in all four conditions. The judge
+returned valid scores for 235 of 240 candidates. Table~\ref{tab:formal-scores}
+shows the locked score summaries. The LLM selector's mean score was close to the
+fixed baseline, while the rule-adaptive baseline had the highest descriptive
+mean. The no-history ablation had the lowest descriptive mean.
+
+\begin{table}[ht]
+  \centering
+  \caption{Blinded-judge action-quality scores on the constructed v2 state pack.}
+  \label{tab:formal-scores}
+  \begin{tabular}{lrrl}
+    \toprule
+    Condition & Judge $n$ & Mean & 95\% CI \\
+    \midrule
+    \texttt{fixed-v2} & 59 & 3.729 & [3.405, 4.053] \\
+    \texttt{full-adaptive-v1} & 60 & 3.883 & [3.560, 4.206] \\
+    \texttt{llm-next-step-v6} & 58 & 3.741 & [3.376, 4.107] \\
+    \texttt{no-history-v1} & 58 & 3.207 & [2.804, 3.610] \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+None of the three primary paired comparisons excluded zero. Full-adaptive minus
+fixed was $+0.153$ ($n=59$, 95\% bootstrap CI $[-0.288, 0.576]$); LLM minus
+fixed was $-0.035$ ($n=57$, CI $[-0.263, 0.211]$); and LLM minus full-adaptive
+was $-0.138$ ($n=58$, CI $[-0.569, 0.293]$).
+
+Executable diagnostics exposed trade-offs that the mean scores alone conceal.
+The fixed condition had 0/60 hard-constraint violations, full-adaptive had 6/60
+(10.0\%), and the LLM condition had 2/60 (3.3\%). The binary evidence-gate
+classification field was correct for 60/60 records in every condition. Judge
+coverage was 59/60 for fixed, 60/60 for full-adaptive, and 58/60 for both the LLM
+and no-history conditions. Critical-error rates among completed judgements were
+1/59, 1/60, 4/58, and 7/58 respectively. Invariance stability was 22/22 for
+fixed, full-adaptive, and no-history, but 20/22 for the LLM condition. The LLM
+selector used a rule fallback for 1/52 model-eligible states.
+
+\section{Discussion}
+
+The formal result does not support the hypothesis that the constrained LLM
+selector produces higher-quality actions than either primary baseline on this
+state pack. Its paired difference from fixed was near zero, and uncertainty in
+all primary comparisons was wide enough to include advantages in either
+direction. The rule-adaptive condition had the highest mean, but its six
+executable progression violations show why a single subjective score should not
+be treated as sufficient evidence of policy safety.
+
+The secondary no-history condition's lower mean and higher critical-error rate
+are consistent with attempt history being useful for action selection. This is
+a mechanism-level observation rather than a causal learner-outcome claim: the
+ablation was secondary, and the frozen primary paired analysis did not estimate
+a no-history contrast. Similarly, the LLM condition's two hard violations and
+lower invariance stability identify specific reliability targets, but v2 was
+not tuned after observing them.
+
+The fixed baseline combined a similar mean score to the LLM condition with no
+hard violations and complete invariance stability. For this benchmark, the
+extra selector complexity therefore did not yield a demonstrated action-quality
+advantage. A future system version should address course-target validation and
+then be evaluated on a new, uncontaminated state split rather than reusing v2.
+
+\section{Limitations and Ethical Boundary}
+
+No participants were recruited for the formal action-quality evaluation. The
+formal runs measure configured systems on a constructed, blinded state pack;
+they do not measure human learning, attainment, usability, confidence, or
+behaviour. Consequently, this report must not claim real-student learning gains
+or population-level learner benefit. Pilot ratings, development states, demo
+traces, simulated outputs, and results observed during debugging are excluded
+from formal results.
+
+The state pack is constructed and limited to beginner-Python situations, so its
+coverage and difficulty distribution need not represent authentic classroom
+work. The selector and judge used different fixed model series but the same
+provider, leaving provider-correlated judgement as a limitation. The judge
+failed to return a valid grounded assessment for 5/240 candidates after the one
+allowed repair, producing unequal condition coverage. Judge scores remain model
+judgements rather than human educational judgements, and the reported intervals
+describe this benchmark rather than a sampled learner population.
+
+The frozen summary labels a 60-state binary classification measure as
+``Needs-Evidence Accuracy''. Its denominator includes both evidence-insufficient
+states and states correctly allowed to proceed; it must therefore be interpreted
+as overall evidence-gate classification accuracy, not as a separately estimated
+positive-class sensitivity. The LLM also fell back to a deterministic rule once
+among 52 eligible states. Finally, the v1 exposure and v2 rebuild were recorded
+before execution, but the transformation-based construction means that v1 and
+v2 are not independent samples and must not be pooled.
+
+\section{Reproducibility}
+
+The formal run identifiers are \texttt{aq-v2-primary-001},
+\texttt{aq-v2-judge-001}, and \texttt{aq-v2-summary-001}. The state-pack hash is
+\texttt{A00F5F005903C18861A37FD92865B1DF589D8D1699232E6748A1370F8D230F96}.
+The selector, judge, and statistics stages respectively recorded clean source
+commits \texttt{d00dd256a096100297ffbddbdbbb5d9923009deb},
+\texttt{c5c6e4d49e195677e6775e36ded2c0d3074f08a5}, and
+\texttt{92f305d55187e781d09259eb2eabfed9b16b69b6}.
+
+The locked statistics manifest links the source records, source manifest, judge
+records, and judge manifest with SHA-256 values
+\texttt{688A4B07E0777E16F3994914A2F817033EBD78F280761FF5416166C0D1B94809},
+\texttt{FB81C4FC1B09DC9229AC7CBE53E422B4C10C667B9307EBDDFFE84FC0BF20FB66},
+\texttt{AD439479E30AB395AECAB5E284F81E811ECCFA9B432863BDC2CD0BC3D00EACE6},
+and \texttt{E0AF016C0DB8FB2FC2C50F0A9EFA7379AB117D00E331F801290CD8983CAB60EA}.
+Reproduction consists of verifying these canonical hashes and regenerating the
+JSON, CSV, and Markdown summary with seed \texttt{20260816} and 10,000
+resamples. API keys, raw provider responses, and process-only proxy settings are
+excluded from all manifests.
+
+\section{Conclusion}
+
+The project implemented a notebook-native, evidence-gated next-action system and
+an auditable evaluation pipeline with frozen inputs, blinded judging,
+write-once artefacts, and a reproducible hash chain. On the constructed v2
+benchmark, the LLM selector did not demonstrate higher action quality than the
+fixed or rule-adaptive baselines. The next empirical step is a newly frozen
+evaluation of any reliability changes, followed---only with appropriate ethics
+approval and consent---by research that measures outcomes with real learners.
+
+% Add a checked bibliography when citations are introduced. The project-plan
+% bibliography at ../project-plan/references.bib is a starting point, not an
+% automatically authoritative final reference list.
+
+\end{document}

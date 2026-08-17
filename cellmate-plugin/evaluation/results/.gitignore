@@ -1,0 +1,5 @@
+*.jsonl
+*.csv
+*.json
+*.md
+!.gitignore

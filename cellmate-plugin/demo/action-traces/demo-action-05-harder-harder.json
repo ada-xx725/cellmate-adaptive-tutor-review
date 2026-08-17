@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "stateId": "demo-action-05-harder",
+  "participantId": "demo-learner",
+  "policy": "full_adaptive",
+  "policyVersion": "full-adaptive-v1",
+  "taskSpec": {
+    "id": "demo-sum-positive",
+    "sourceMode": "course_verified",
+    "taskSummary": "Sum positive values",
+    "expectedBehavior": "Return the sum of values greater than zero",
+    "title": "Sum positive values",
+    "promptMarkdown": "Use iteration and a condition.",
+    "targetConcepts": [
+      "functions",
+      "for_loops",
+      "conditionals",
+      "accumulators"
+    ],
+    "primaryConcept": "accumulators",
+    "difficulty": 2,
+    "confidence": 1
+  },
+  "evidence": {
+    "status": "passed",
+    "summary": "PyBryt SATISFIED: True; normal, empty, and negative-only cases passed",
+    "source": "pybryt",
+    "confidence": "high",
+    "hasReliableCheck": true
+  },
+  "learnerBefore": {
+    "studentId": "demo-learner",
+    "mastery": {
+      "functions": 76,
+      "for_loops": 75,
+      "conditionals": 74,
+      "accumulators": 75
+    }
+  },
+  "history": [],
+  "status": "action",
+  "action": "HARDER",
+  "reasonCodes": [
+    "MASTERY_AT_LEAST_70"
+  ],
+  "evidenceUsed": [
+    "status:passed",
+    "source:pybryt",
+    "confidence:high",
+    "reliable:true"
+  ],
+  "learnerAfter": {
+    "studentId": "demo-learner",
+    "mastery": {
+      "functions": 84,
+      "for_loops": 83,
+      "conditionals": 82,
+      "accumulators": 83
+    }
+  },
+  "latencyMs": 0.063,
+  "modelVersion": "not-used-rule-coverage",
+  "promptVersion": "not-used-rule-coverage",
+  "policyUsesLlm": false,
+  "createdAt": "2026-07-26T19:58:06.105Z",
+  "caseTitle": "Solid current-concept mastery",
+  "caseDescription": "The learner passed with solid mastery, so the next practice keeps the concept and adds one constraint.",
+  "studentCode": "def sum_positive(values):\n    return sum(value for value in values if value > 0)",
+  "expectedAction": "HARDER",
+  "decisionSource": "full_adaptive_policy",
+  "matchedExpectedAction": true,
+  "traceNote": "Production DecisionEngine trace using FullAdaptivePolicy on a frozen demo input."
+}

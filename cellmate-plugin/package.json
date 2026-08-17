@@ -1,0 +1,306 @@
+{
+  "name": "cellmate",
+  "publisher": "CellMate",
+  "displayName": "CellMate",
+  "description": "Our team created an AI-powered feedback system for Jupyter Notebooks, enhancing student learning with AI-driven insights and support. the plugin contains a speech-to-text feature, an explain and expand feature, an error helper, and an AI-feedback button.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teachnology/cellmate/tree/main"
+  },
+  "version": "0.4.0",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "activationEvents": [
+    "onNotebook:*"
+  ],
+  "main": "./out/extension.js",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "axios": "^1.5.0",
+    "extract-zip": "^2.0.1",
+    "get-port": "^7.1.0",
+    "marked": "^16.0.0",
+    "simple-git": "^3.28.0",
+    "tmp": "^0.2.5"
+  },
+  "devDependencies": {
+    "@types/extract-zip": "^2.0.0",
+    "@types/node": "^18.7.18",
+    "@types/tmp": "^0.2.6",
+    "@types/vscode": "^1.75.0",
+    "@vscode/test-electron": "^2.3.0",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "compile:eval": "tsc -p tsconfig.evaluation.json",
+    "test": "npm run compile && npm run compile:eval && npm run annotation:evidence:check && npm run eval:states:v1:check && npm run eval:states:check && node --test test/adaptivePolicy.test.js test/pythonValidator.test.js test/genericTaskInference.test.js test/llmNextStepSelector.test.js test/llmDecisionEngine.test.js test/constrainedDecisionPlan.test.js test/llmNextStepSelectorV7.test.js test/constrainedLlmDecisionEngine.test.js test/llmTransport.test.js test/decisionPresentation.test.js test/studentPresentation.test.js test/feedbackGuidance.test.js test/nextStepSupport.test.js test/analysisFingerprint.test.js test/courseNotebookLayout.test.js test/courseRecommendation.test.js test/selfStudyGoal.test.js test/conceptCanonicalization.test.js test/courseEvidence.test.js test/adaptiveStore.test.js test/attemptDecisionCoordinator.test.js test/decisionEngine.test.js test/courseMetadata.test.js test/decisionTrace.test.js test/evaluationRunner.test.js test/actionQualityProtocol.test.js test/actionQualityStatePack.test.js test/actionQualityStatePackV2.test.js test/actionQualityRunner.test.js test/actionQualityJudge.test.js test/actionQualityStatistics.test.js test/simulatedProviders.test.js test/simulatedActionQuality.test.js test/interventionConditions.test.js test/annotationMaterials.test.js test/formalStateValidator.test.js test/formalStateDraft.test.js test/formalEvidenceFixtures.test.js test/llmConfiguration.test.js",
+    "eval:policy": "npm run compile:eval && node out-evaluation/evaluation/runPolicies.js",
+    "eval:action-quality:run": "npm run compile:eval && node out-evaluation/evaluation/actionQualityRunner.js",
+    "eval:action-quality:judge": "npm run compile:eval && node out-evaluation/evaluation/actionQualityJudge.js",
+    "eval:action-quality:statistics": "npm run compile:eval && node out-evaluation/evaluation/actionQualityStatistics.js",
+    "eval:action-quality:simulate": "npm run compile:eval && node out-evaluation/evaluation/runSimulatedActionQuality.js",
+    "demo:actions": "npm run compile:eval && node out-evaluation/evaluation/runDemoActionCases.js",
+    "annotation:show": "node evaluation/annotation/showPilotState.js",
+    "annotation:validate": "node evaluation/annotation/validateFormalStatePack.js",
+    "annotation:evidence": "python evaluation/annotation/evidence/runEvidenceFixtures.py evaluation/annotation/evidence/FORMAL_EVIDENCE_FIXTURES_BATCH_01.json --output evaluation/annotation/evidence/FORMAL_EVIDENCE_RESULTS_BATCH_01.json",
+    "annotation:evidence:check": "python evaluation/annotation/evidence/runEvidenceFixtures.py evaluation/annotation/evidence/FORMAL_EVIDENCE_FIXTURES_BATCH_01.json --check evaluation/annotation/evidence/FORMAL_EVIDENCE_RESULTS_BATCH_01.json",
+    "eval:states:build": "node evaluation/annotation/buildActionQualityStatePackV2.js",
+    "eval:states:check": "node evaluation/annotation/buildActionQualityStatePackV2.js --check",
+    "eval:states:v1:build": "node evaluation/annotation/buildActionQualityStatePack.js",
+    "eval:states:v1:check": "node evaluation/annotation/buildActionQualityStatePack.js --check",
+    "build:course-manifest": "python scripts/build_course_manifest.py ../external/introduction-to-python"
+  },
+  "contributes": {
+    "configuration": [
+      {
+        "title": "CellMate • General",
+        "properties": {
+          "CellMate.apiUrl": {
+            "type": "string",
+            "description": "API URL for the LLM service",
+            "order": 0
+          },
+          "CellMate.apiKey": {
+            "type": "string",
+            "description": "API key for the LLM service",
+            "order": 1
+          },
+          "CellMate.modelName": {
+            "type": "string",
+            "default": "gpt-oss:120b",
+            "description": "The model name used for AI feedback",
+            "order": 2
+          },
+          "CellMate.templateId": {
+            "type": "string",
+            "default": "standard_feedback",
+            "description": "Template ID to use for AI feedback (fetched from GitHub repository)"
+          },
+          "CellMate.useHiddenTests": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to use hidden tests to enhance the prompt with test analysis"
+          },
+          "CellMate.errorHelperOutput": {
+            "type": "string",
+            "default": "markdown",
+            "enum": [
+              "cellOutput",
+              "markdown"
+            ],
+            "enumDescriptions": [
+              "Display Error Helper analysis as cell output (HTML)",
+              "Display Error Helper analysis as markdown cell below"
+            ],
+            "description": "Choose how Error Helper displays its analysis"
+          },
+          "CellMate.errorHelper.alwaysShow": {
+            "type": "boolean",
+            "default": false,
+            "description": "Always show Error Helper button, even when there are no errors in the cell",
+            "order": 15
+          },
+          "CellMate.feedbackMode": {
+            "type": "string",
+            "default": "Expand",
+            "enum": [
+              "Expand",
+              "Explain"
+            ],
+            "enumDescriptions": [
+              "Expand the feedback for students",
+              "Explain the feedback in simpler terms"
+            ],
+            "description": "Choose how the feedback will be processed by the AI"
+          },
+          "CellMate.showButtonInAllMarkdown": {
+            "type": "boolean",
+            "default": false,
+            "description": "Show the Expand/Explain button in all markdown cells (not just those containing feedback)"
+          }
+        }
+      },
+      {
+        "title": "CellMate • Speech-to-Text",
+        "properties": {
+          "CellMate.speechProvider": {
+            "type": "string",
+            "default": "local",
+            "enum": [
+              "local",
+              "openai",
+              "azure"
+            ],
+            "description": "Speech engine: offline *local* model (default) or cloud providers.",
+            "order": 3
+          },
+          "CellMate.speechLocal.language": {
+            "type": "string",
+            "default": "en",
+            "description": "Language hint for the local model (ISO-639-1).",
+            "order": 4
+          },
+          "CellMate.speechOpenai.apiKey": {
+            "type": "string",
+            "description": "OpenAI API key (`sk-…`).",
+            "order": 5
+          },
+          "CellMate.speechOpenai.modelId": {
+            "type": "string",
+            "default": "whisper-1",
+            "description": "Model ID (e.g. whisper-1).",
+            "order": 6
+          },
+          "CellMate.speechOpenai.language": {
+            "type": "string",
+            "default": "en",
+            "description": "Language code for OpenAI.",
+            "order": 7
+          },
+          "CellMate.speechAzure.apiKey": {
+            "type": "string",
+            "description": "Azure Speech API key.",
+            "order": 8
+          },
+          "CellMate.speechAzure.region": {
+            "type": "string",
+            "default": "westeurope",
+            "description": "Azure region.",
+            "order": 9
+          },
+          "CellMate.speechAzure.language": {
+            "type": "string",
+            "default": "en-US",
+            "description": "Language code for Azure.",
+            "order": 10
+          }
+        }
+      },
+      {
+        "title": "CellMate — Adaptive Next Step",
+        "properties": {
+          "CellMate.adaptive.pythonPath": {
+            "type": "string",
+            "default": "python",
+            "description": "Python interpreter used to validate generated exercises."
+          },
+          "CellMate.adaptive.apiUrl": {
+            "type": "string",
+            "default": "",
+            "description": "Optional OpenAI-compatible or local LLM endpoint for constrained exercise generation."
+          },
+          "CellMate.adaptive.apiKey": {
+            "type": "string",
+            "default": "",
+            "description": "Optional API key for constrained exercise generation."
+          },
+          "CellMate.adaptive.modelName": {
+            "type": "string",
+            "default": "",
+            "description": "Optional model for constrained exercise generation."
+          },
+          "CellMate.adaptive.coursePath": {
+            "type": "string",
+            "default": "../external/introduction-to-python",
+            "description": "Pinned Introduction to Python course checkout used to build course metadata."
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "CellMate.sendNotebookCell",
+        "title": "Send Notebook Cell to AI Feedback"
+      },
+      {
+        "command": "CellMate.errorHelper",
+        "title": "Error Helper - Get help with cell errors"
+      },
+      {
+        "command": "CellMate.startErrorChat",
+        "title": "Start Error Helper Chat"
+      },
+      {
+        "command": "CellMate.listTemplates",
+        "title": "List Available Templates"
+      },
+      {
+        "command": "CellMate.listExercises",
+        "title": "List Available Exercises"
+      },
+      {
+        "command": "CellMate.selectTemplate",
+        "title": "choose Prompt template"
+      },
+      {
+        "command": "CellMate.syncGitRepo",
+        "title": "Sync GitHub Repository"
+      },
+      {
+        "command": "CellMate.showPromptContent",
+        "title": "Show Prompt Content"
+      },
+      {
+        "command": "CellMate.toggleRecording",
+        "title": "🎙️ Toggle Speech-to-Text Recording"
+      },
+      {
+        "command": "CellMate.askFollowUpFromButton",
+        "title": "Ask Follow-up Question (via Button)"
+      },
+      {
+        "command": "CellMate.adaptiveNextStep",
+        "title": "Adaptive Next Step"
+      },
+      {
+        "command": "CellMate.startSelfStudyGoal",
+        "title": "Adaptive Next Step: Start Self-study Goal"
+      },
+      {
+        "command": "CellMate.setAdaptiveParticipantId",
+        "title": "Adaptive Next Step: Set Anonymous Participant ID"
+      },
+      {
+        "command": "CellMate.resetAdaptiveLearnerState",
+        "title": "Adaptive Next Step: Reset Learner State"
+      },
+      {
+        "command": "CellMate.exportAdaptiveDecisionTrace",
+        "title": "Adaptive Next Step: Export Evaluation Trace"
+      }
+    ],
+    "notebookCellStatusBarItemProviders": [
+      {
+        "viewType": "*",
+        "items": [
+          {
+            "command": "CellMate.errorHelper",
+            "alignment": "right",
+            "priority": 200
+          },
+          {
+            "command": "CellMate.sendNotebookCell",
+            "alignment": "right",
+            "priority": 100
+          },
+          {
+            "command": "CellMate.toggleRecording",
+            "alignment": "left",
+            "priority": 100
+          },
+          {
+            "when": "notebookCellKind == markup",
+            "command": "CellMate.explainMarkdownCell",
+            "alignment": "right",
+            "priority": 100
+          }
+        ]
+      }
+    ]
+  },
+  "extensionDependencies": [
+    "ms-python.python"
+  ]
+}

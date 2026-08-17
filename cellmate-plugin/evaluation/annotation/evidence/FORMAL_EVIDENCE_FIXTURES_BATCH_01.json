@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "batch_version": "formal-heldout-v1-draft-b01-evidence",
+  "state_pack_sha256": "087B16EA3736A6A4E10EF6F12FED37E2B049E0A268FF0EB09B06E23F3D91D4F3",
+  "policy_outputs_observed": false,
+  "reference_labels_present": false,
+  "fixtures": [
+    {
+      "fixture_id": "evidence-cf-001-my-sum",
+      "state_ids": ["heldout-001", "heldout-002"],
+      "execution_mode": "python",
+      "student_code": "def my_sum(x):\n    total = 0\n    for value in x:\n        total = value\n    return total\n",
+      "tests": [
+        {"id": "callable", "category": "callable", "code": "assert callable(my_sum)"},
+        {"id": "numeric-result", "category": "numeric result", "code": "import numbers\nassert isinstance(my_sum([-1, 1, 2, 3, 0.1]), numbers.Real)"},
+        {"id": "mixed-sign-floats", "category": "mixed-sign floats", "code": "import math\nassert math.isclose(my_sum([-1, 1, 2, 3, 0.1]), 5.1)"},
+        {"id": "empty-input", "category": "empty input", "code": "import math\nassert math.isclose(my_sum([]), 0)"},
+        {"id": "long-range", "category": "long range", "code": "import math\nassert math.isclose(my_sum(range(1, 101)), 5050)"}
+      ],
+      "diagnostics": [
+        {"id": "last-element-overwrite", "code": "assert my_sum([1, 2, 3]) == 3"}
+      ],
+      "expected": {"status": "failed", "passed_checks": 3, "total_checks": 5, "error_signature": "accumulator_overwritten"}
+    },
+    {
+      "fixture_id": "evidence-cf-002-count-positive",
+      "state_ids": ["heldout-003", "heldout-004"],
+      "execution_mode": "python",
+      "student_code": "def count_positive(values):\n    count = 0\n    for value in values:\n        if value:\n            count += 1\n    return count\n",
+      "tests": [
+        {"id": "positive-only", "category": "positive values", "code": "assert count_positive([1, 2, 3]) == 3"},
+        {"id": "negative-only", "category": "negative values", "code": "assert count_positive([-1, -2]) == 0"},
+        {"id": "mixed-signs", "category": "mixed signs", "code": "assert count_positive([-1, 2, 0]) == 1"},
+        {"id": "zero", "category": "zero", "code": "assert count_positive([0]) == 0"},
+        {"id": "empty", "category": "empty list", "code": "assert count_positive([]) == 0"},
+        {"id": "single-positive", "category": "positive values", "code": "assert count_positive([5]) == 1"},
+        {"id": "single-negative", "category": "negative values", "code": "assert count_positive([-5]) == 0"}
+      ],
+      "diagnostics": [
+        {"id": "negative-truthiness", "code": "assert count_positive([-1]) == 1"}
+      ],
+      "expected": {"status": "failed", "passed_checks": 4, "total_checks": 7, "error_signature": "truthiness_used_instead_of_positive_comparison"}
+    },
+    {
+      "fixture_id": "evidence-cf-003-factorial",
+      "state_ids": ["heldout-005", "heldout-006"],
+      "execution_mode": "python",
+      "student_code": "def my_factorial(n):\n    result = 1\n    for value in range(1, n + 1):\n        result *= value\n    return result\n",
+      "tests": [
+        {"id": "zero", "category": "zero", "code": "assert my_factorial(0) == 1"},
+        {"id": "one", "category": "one", "code": "assert my_factorial(1) == 1"},
+        {"id": "two", "category": "small positive integer", "code": "assert my_factorial(2) == 2"},
+        {"id": "five", "category": "small positive integer", "code": "assert my_factorial(5) == 120"},
+        {"id": "numeric-result", "category": "numeric result", "code": "import numbers\nassert isinstance(my_factorial(5), numbers.Number)"},
+        {"id": "callable", "category": "callable", "code": "assert callable(my_factorial)"}
+      ],
+      "diagnostics": [],
+      "expected": {"status": "passed", "passed_checks": 6, "total_checks": 6, "error_signature": null}
+    },
+    {
+      "fixture_id": "evidence-cf-004-parse-scores",
+      "state_ids": ["heldout-007", "heldout-008"],
+      "execution_mode": "python",
+      "student_code": "def parse_scores(text):\n    return [int(part.strip()) for part in text.split(',') if part.strip()]\n",
+      "tests": [
+        {"id": "single", "category": "single value", "code": "assert parse_scores('5') == [5]"},
+        {"id": "multiple", "category": "multiple values", "code": "assert parse_scores('1,2,3') == [1, 2, 3]"},
+        {"id": "whitespace", "category": "whitespace", "code": "assert parse_scores(' 1, 2 ,3 ') == [1, 2, 3]"},
+        {"id": "negative", "category": "negative values", "code": "assert parse_scores('-2,3') == [-2, 3]"},
+        {"id": "empty-fields", "category": "empty fields", "code": "assert parse_scores('1,,3,') == [1, 3]"},
+        {"id": "empty-string", "category": "empty string", "code": "assert parse_scores('') == []"},
+        {"id": "only-empty-fields", "category": "empty fields", "code": "assert parse_scores(' , , ') == []"}
+      ],
+      "diagnostics": [],
+      "expected": {"status": "passed", "passed_checks": 7, "total_checks": 7, "error_signature": null}
+    },
+    {
+      "fixture_id": "evidence-cf-005-unavailable-pybryt",
+      "state_ids": ["heldout-009", "heldout-010"],
+      "execution_mode": "unavailable",
+      "raw_output_excerpt": "warning: stale cache",
+      "tests": [],
+      "diagnostics": [],
+      "expected": {"status": "unavailable", "passed_checks": 0, "total_checks": 0, "error_signature": null}
+    },
+    {
+      "fixture_id": "evidence-cf-006-reverse-dict-narrow",
+      "state_ids": ["heldout-011", "heldout-012"],
+      "execution_mode": "python",
+      "student_code": "def reverse_dict(dictionary):\n    return {value: key for key, value in dictionary.items()}\n",
+      "tests": [
+        {"id": "course-visible-katze-key", "category": "one course dictionary example", "code": "res = reverse_dict({'dog': 'Hund', 'cat': 'Katze', 'house': 'Haus', 'bicycle': 'Fahrrad'})\nassert 'Katze' in res.keys()"}
+      ],
+      "diagnostics": [],
+      "expected": {"status": "passed", "passed_checks": 1, "total_checks": 1, "error_signature": null}
+    }
+  ]
+}

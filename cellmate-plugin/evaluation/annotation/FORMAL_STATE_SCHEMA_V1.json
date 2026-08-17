@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/cellmate/formal-state-v1.schema.json",
+  "title": "CellMate formal blinded annotation state v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "annotation_guide_version",
+    "state_pack_version",
+    "state_id",
+    "stratum",
+    "source_mode",
+    "task",
+    "student_code",
+    "evidence",
+    "learner_before",
+    "history"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "annotation_guide_version": { "const": "annotation-guide-v1" },
+    "state_pack_version": { "type": "string", "minLength": 1 },
+    "state_id": { "type": "string", "pattern": "^heldout-[0-9]{3}$" },
+    "stratum": {
+      "enum": [
+        "needs_evidence",
+        "first_failure",
+        "repeated_failure",
+        "developing_pass",
+        "established_pass",
+        "narrow_pass"
+      ]
+    },
+    "source_mode": { "enum": ["course_verified", "generated_attempt", "generic_llm"] },
+    "counterfactual_pair_id": { "type": ["string", "null"] },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "task_summary", "expected_behavior", "primary_concept", "target_concepts", "difficulty"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "task_summary": { "type": "string", "minLength": 1 },
+        "expected_behavior": { "type": "string", "minLength": 1 },
+        "primary_concept": { "type": "string", "minLength": 1 },
+        "target_concepts": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "difficulty": { "type": "integer", "minimum": 1, "maximum": 5 }
+      }
+    },
+    "student_code": { "type": "string" },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "summary", "source", "confidence", "has_reliable_check", "test_coverage"],
+      "properties": {
+        "status": { "enum": ["passed", "failed", "not_run", "unavailable"] },
+        "summary": { "type": "string", "minLength": 1 },
+        "source": { "type": "string", "minLength": 1 },
+        "confidence": { "enum": ["low", "medium", "high"] },
+        "has_reliable_check": { "type": "boolean" },
+        "error_signature": { "type": ["string", "null"] },
+        "test_coverage": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["summary", "passed_checks", "total_checks", "categories"],
+          "properties": {
+            "summary": { "type": "string", "minLength": 1 },
+            "passed_checks": { "type": "integer", "minimum": 0 },
+            "total_checks": { "type": "integer", "minimum": 0 },
+            "categories": { "type": "array", "items": { "type": "string" } },
+            "not_covered": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "learner_before": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scale_note", "concepts"],
+      "properties": {
+        "scale_note": { "type": "string", "minLength": 1 },
+        "concepts": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["score", "band"],
+            "properties": {
+              "score": { "type": "number", "minimum": 0, "maximum": 100 },
+              "band": { "enum": ["emerging", "developing", "established"] }
+            }
+          }
+        }
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["attempt_index", "evidence_status", "support_received", "support_outcome"],
+        "properties": {
+          "attempt_index": { "type": "integer", "minimum": 1 },
+          "evidence_status": { "enum": ["passed", "failed", "not_run", "unavailable"] },
+          "support_received": {
+            "type": "object",
+            "required": ["type", "summary"],
+            "properties": {
+              "type": { "enum": ["none", "hint", "scaffold", "easier", "similar", "harder", "next_concept"] },
+              "summary": { "type": "string", "minLength": 1 }
+            }
+          },
+          "support_outcome": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "course_context": { "type": ["object", "null"], "additionalProperties": true }
+  }
+}
